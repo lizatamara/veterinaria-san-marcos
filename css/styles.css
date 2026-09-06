@@ -1,0 +1,265 @@
+:root {
+  --brand: #2f7d74;
+  --brand-dark: #245f58;
+  --brand-soft: #eaf5f2;
+  --ink: #24333a;
+  --muted: #66757d;
+  --surface: #ffffff;
+  --soft: #f5f9f8;
+  --border: #dce8e5;
+  --shadow: 0 12px 35px rgba(32, 70, 66, 0.09);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  color: var(--ink);
+  background: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--brand); }
+a:hover { color: var(--brand-dark); }
+
+.btn-primary {
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand-dark);
+  --bs-btn-hover-border-color: var(--brand-dark);
+  --bs-btn-active-bg: var(--brand-dark);
+  --bs-btn-active-border-color: var(--brand-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand);
+  --bs-btn-hover-border-color: var(--brand);
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.navbar-brand { color: var(--ink); }
+.navbar-brand:hover { color: var(--brand); }
+.nav-link { font-weight: 500; }
+.nav-link:hover, .nav-link:focus { color: var(--brand); }
+
+.nav-toggle { display: none; }
+.nav-toggle-label { cursor: pointer; width: 42px; height: 42px; padding: 10px; }
+.nav-toggle-label span { display: block; height: 2px; margin: 5px 0; background: var(--ink); transition: .2s; }
+.custom-collapse { display: flex; }
+
+.hero-section {
+  background:
+    radial-gradient(circle at 90% 20%, rgba(47,125,116,.14), transparent 32%),
+    linear-gradient(135deg, #f4fbf9 0%, #fff 60%);
+}
+
+.hero-card {
+  min-height: 310px;
+  border-radius: 28px;
+  background: var(--brand);
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.hero-card-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.section-heading { max-width: 700px; }
+
+.bg-soft { background: var(--soft); }
+
+.page-hero {
+  background: var(--soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.service-card,
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(32, 70, 66, .04);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.service-card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.catalog-image {
+  height: 190px;
+  object-fit: cover;
+  background: var(--brand-soft);
+}
+
+.price { color: var(--brand-dark); }
+
+.filter-panel,
+.form-section,
+.summary-card,
+.info-panel,
+.auth-card,
+.detail-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 5px 22px rgba(32, 70, 66, .04);
+}
+
+.filter-panel { padding: 1.25rem; }
+.form-section { padding: 1.5rem; }
+.summary-card { padding: 1.5rem; }
+.info-panel { padding: 2rem; }
+.detail-card { overflow: hidden; }
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  background: var(--brand-soft);
+}
+
+.detail-meta {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: 1rem;
+  background: var(--soft);
+  border-radius: 12px;
+}
+
+.detail-meta > i { color: var(--brand); font-size: 1.25rem; }
+.detail-meta span { display: flex; flex-direction: column; gap: .15rem; }
+.detail-meta small { color: var(--muted); }
+.detail-meta strong { font-size: .95rem; }
+
+.process-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.process-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.process-list li > span {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.process-list small { display: block; color: var(--muted); margin-top: .15rem; }
+
+.map-placeholder {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgba(234,245,242,.92), rgba(234,245,242,.92)),
+    repeating-linear-gradient(45deg, #d8eae6 0, #d8eae6 2px, transparent 2px, transparent 12px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--brand-dark);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  background: var(--soft);
+}
+
+.empty-state > i { font-size: 3rem; color: var(--brand); }
+
+.site-footer {
+  background: #203d3a;
+  color: #eaf5f2;
+}
+
+.site-footer .footer-links a { color: #d9efeb; text-decoration: none; }
+.site-footer .footer-links a:hover { text-decoration: underline; }
+
+.auth-page { background: var(--soft); }
+.auth-card { max-width: 500px; padding: 2rem; }
+.auth-card-wide { max-width: 850px; }
+.auth-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 2rem;
+}
+
+.quantity-input { max-width: 110px; }
+
+@media (max-width: 991.98px) {
+  .custom-collapse {
+    display: none;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .nav-toggle:checked ~ .custom-collapse { display: block; }
+  .nav-toggle-label { display: block; }
+
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked + .nav-toggle-label span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .hero-card { min-height: 240px; padding: 2rem; }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section h1 { font-size: 2.35rem; }
+  .detail-image { min-height: 280px; }
+  .auth-card { padding: 1.25rem; }
+}

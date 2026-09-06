@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Veterinaria San Marcos - Sistema de reservas y servicios veterinarios">
+  <title>Productos | Veterinaria San Marcos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html">
+        <span class="brand-icon" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span>
+        <span>Veterinaria San Marcos</span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Abrir menú de navegación">
+      <label class="nav-toggle-label d-lg-none" for="navToggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="navbar-collapse custom-collapse" id="mainNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="reservar.html">Reservar hora</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mis-reservas.html">Mis reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-primary btn-sm px-3" href="login.html" id="btnLoginNav">
+              <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container py-5">
+      <span class="eyebrow">Catálogo complementario</span>
+      <h1 class="display-6 fw-bold mt-2">Productos veterinarios</h1>
+      <p class="lead text-muted mb-0">Catálogo informativo de medicamentos y vacunas registrados en el inventario de la clínica.</p>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="alert alert-info" role="note">
+        <i class="bi bi-info-circle me-2"></i>
+        La compra de medicamentos queda sujeta a la indicación y condiciones correspondientes. Este catálogo se incorpora como funcionalidad complementaria de la evaluación.
+      </div>
+      <div class="filter-panel mb-4">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-5">
+            <label for="filtroCategoriaProducto" class="form-label fw-semibold">Categoría</label>
+            <select class="form-select" id="filtroCategoriaProducto">
+              <option value="">Todas las categorías</option>
+              <option>Antibióticos</option><option>Antiparasitarios</option><option>Antiinflamatorios</option>
+              <option>Dermatología</option><option>Digestivo</option><option>Cardíaco</option>
+              <option>Analgésicos</option><option>Vacunas</option><option>Suplementos</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="filtroPrecioMinProducto" class="form-label fw-semibold">Precio mínimo</label>
+            <input type="number" class="form-control" id="filtroPrecioMinProducto" min="0">
+          </div>
+          <div class="col-md-2">
+            <label for="filtroPrecioMaxProducto" class="form-label fw-semibold">Precio máximo</label>
+            <input type="number" class="form-control" id="filtroPrecioMaxProducto" min="0">
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-outline-secondary w-100" id="btnLimpiarFiltrosProductos">Limpiar</button>
+          </div>
+        </div>
+        <div class="small text-muted mt-3" id="resultadoFiltroProductos">22 productos disponibles</div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4" id="catalogoProductos">
+        
+<article class="col" id="producto-me001" data-id="ME001" data-category="Antibióticos" data-price="4200" data-stock="45">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me001.svg" class="card-img-top catalog-image" alt="Ilustración del producto Amoxibay 250mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antibióticos</span>
+        <span class="small text-muted">ME001</span>
+      </div>
+      <h2 class="h5 card-title">Amoxibay 250mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Amoxicilina</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">45</span></p>
+      <p class="h5 fw-bold price mb-3">$4.200</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME001">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me001" data-product-id="ME001">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me002" data-id="ME002" data-category="Antibióticos" data-price="6800" data-stock="30">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me002.svg" class="card-img-top catalog-image" alt="Ilustración del producto Enrox 50mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antibióticos</span>
+        <span class="small text-muted">ME002</span>
+      </div>
+      <h2 class="h5 card-title">Enrox 50mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Enrofloxacino</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">30</span></p>
+      <p class="h5 fw-bold price mb-3">$6.800</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME002">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me002" data-product-id="ME002">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me003" data-id="ME003" data-category="Antibióticos" data-price="3900" data-stock="28">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me003.svg" class="card-img-top catalog-image" alt="Ilustración del producto Metrobay 250mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antibióticos</span>
+        <span class="small text-muted">ME003</span>
+      </div>
+      <h2 class="h5 card-title">Metrobay 250mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Metronidazol</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">28</span></p>
+      <p class="h5 fw-bold price mb-3">$3.900</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME003">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me003" data-product-id="ME003">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me004" data-id="ME004" data-category="Antiparasitarios" data-price="9500" data-stock="60">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me004.svg" class="card-img-top catalog-image" alt="Ilustración del producto Nexgard">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiparasitarios</span>
+        <span class="small text-muted">ME004</span>
+      </div>
+      <h2 class="h5 card-title">Nexgard</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Afoxolaner</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Masticable 1 unid.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">60</span></p>
+      <p class="h5 fw-bold price mb-3">$9.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME004">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me004" data-product-id="ME004">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me005" data-id="ME005" data-category="Antiparasitarios" data-price="18900" data-stock="40">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me005.svg" class="card-img-top catalog-image" alt="Ilustración del producto Bravecto">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiparasitarios</span>
+        <span class="small text-muted">ME005</span>
+      </div>
+      <h2 class="h5 card-title">Bravecto</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Fluralaner</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Masticable 1 unid.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">40</span></p>
+      <p class="h5 fw-bold price mb-3">$18.900</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME005">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me005" data-product-id="ME005">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me006" data-id="ME006" data-category="Antiparasitarios" data-price="14500" data-stock="35">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me006.svg" class="card-img-top catalog-image" alt="Ilustración del producto Revolution Plus">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiparasitarios</span>
+        <span class="small text-muted">ME006</span>
+      </div>
+      <h2 class="h5 card-title">Revolution Plus</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Selamectina+Sarolaner</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Pipeta 1 unid.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">35</span></p>
+      <p class="h5 fw-bold price mb-3">$14.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME006">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me006" data-product-id="ME006">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me007" data-id="ME007" data-category="Antiparasitarios" data-price="3200" data-stock="80">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me007.svg" class="card-img-top catalog-image" alt="Ilustración del producto Drontal Plus">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiparasitarios</span>
+        <span class="small text-muted">ME007</span>
+      </div>
+      <h2 class="h5 card-title">Drontal Plus</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Praziquantel+Pamoato</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Comprimido 1 unid.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">80</span></p>
+      <p class="h5 fw-bold price mb-3">$3.200</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME007">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me007" data-product-id="ME007">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me008" data-id="ME008" data-category="Antiparasitarios" data-price="6800" data-stock="50">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me008.svg" class="card-img-top catalog-image" alt="Ilustración del producto Milbemax Gato">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiparasitarios</span>
+        <span class="small text-muted">ME008</span>
+      </div>
+      <h2 class="h5 card-title">Milbemax Gato</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Milbemicina+Praziq.</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Comprimido 2 unid.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">50</span></p>
+      <p class="h5 fw-bold price mb-3">$6.800</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME008">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me008" data-product-id="ME008">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me009" data-id="ME009" data-category="Antiinflamatorios" data-price="4500" data-stock="55">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me009.svg" class="card-img-top catalog-image" alt="Ilustración del producto Meloxicam 1mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiinflamatorios</span>
+        <span class="small text-muted">ME009</span>
+      </div>
+      <h2 class="h5 card-title">Meloxicam 1mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Meloxicam</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">55</span></p>
+      <p class="h5 fw-bold price mb-3">$4.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME009">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me009" data-product-id="ME009">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me010" data-id="ME010" data-category="Antiinflamatorios" data-price="9800" data-stock="30">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me010.svg" class="card-img-top catalog-image" alt="Ilustración del producto Carprofen 50mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Antiinflamatorios</span>
+        <span class="small text-muted">ME010</span>
+      </div>
+      <h2 class="h5 card-title">Carprofen 50mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Carprofeno</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">30</span></p>
+      <p class="h5 fw-bold price mb-3">$9.800</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME010">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me010" data-product-id="ME010">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me011" data-id="ME011" data-category="Dermatología" data-price="8900" data-stock="25">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me011.svg" class="card-img-top catalog-image" alt="Ilustración del producto Clorhexidina shampoo">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Dermatología</span>
+        <span class="small text-muted">ME011</span>
+      </div>
+      <h2 class="h5 card-title">Clorhexidina shampoo</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Clorhexidina 2%</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Frasco 250ml</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">25</span></p>
+      <p class="h5 fw-bold price mb-3">$8.900</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME011">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me011" data-product-id="ME011">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me012" data-id="ME012" data-category="Dermatología" data-price="12500" data-stock="20">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me012.svg" class="card-img-top catalog-image" alt="Ilustración del producto Malaseb shampoo">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Dermatología</span>
+        <span class="small text-muted">ME012</span>
+      </div>
+      <h2 class="h5 card-title">Malaseb shampoo</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Miconazol+Clorhex.</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Frasco 250ml</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">20</span></p>
+      <p class="h5 fw-bold price mb-3">$12.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME012">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me012" data-product-id="ME012">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me013" data-id="ME013" data-category="Dermatología" data-price="22000" data-stock="18">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me013.svg" class="card-img-top catalog-image" alt="Ilustración del producto Apoquel 16mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Dermatología</span>
+        <span class="small text-muted">ME013</span>
+      </div>
+      <h2 class="h5 card-title">Apoquel 16mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Oclacitinib</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">18</span></p>
+      <p class="h5 fw-bold price mb-3">$22.000</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME013">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me013" data-product-id="ME013">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me014" data-id="ME014" data-category="Digestivo" data-price="5600" data-stock="40">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me014.svg" class="card-img-top catalog-image" alt="Ilustración del producto Probifor">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Digestivo</span>
+        <span class="small text-muted">ME014</span>
+      </div>
+      <h2 class="h5 card-title">Probifor</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Bacillus clausii</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Sobre 5ml x10</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">40</span></p>
+      <p class="h5 fw-bold price mb-3">$5.600</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME014">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me014" data-product-id="ME014">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me015" data-id="ME015" data-category="Digestivo" data-price="3800" data-stock="35">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me015.svg" class="card-img-top catalog-image" alt="Ilustración del producto Omeprazol 10mg vet">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Digestivo</span>
+        <span class="small text-muted">ME015</span>
+      </div>
+      <h2 class="h5 card-title">Omeprazol 10mg vet</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Omeprazol</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">35</span></p>
+      <p class="h5 fw-bold price mb-3">$3.800</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME015">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me015" data-product-id="ME015">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me016" data-id="ME016" data-category="Cardíaco" data-price="28000" data-stock="15">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me016.svg" class="card-img-top catalog-image" alt="Ilustración del producto Vetmedin 2.5mg">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Cardíaco</span>
+        <span class="small text-muted">ME016</span>
+      </div>
+      <h2 class="h5 card-title">Vetmedin 2.5mg</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Pimobendan</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">15</span></p>
+      <p class="h5 fw-bold price mb-3">$28.000</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME016">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me016" data-product-id="ME016">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me017" data-id="ME017" data-category="Analgésicos" data-price="5200" data-stock="22">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me017.svg" class="card-img-top catalog-image" alt="Ilustración del producto Tramadol 50mg vet">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Analgésicos</span>
+        <span class="small text-muted">ME017</span>
+      </div>
+      <h2 class="h5 card-title">Tramadol 50mg vet</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Tramadol</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 10 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">22</span></p>
+      <p class="h5 fw-bold price mb-3">$5.200</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME017">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me017" data-product-id="ME017">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me018" data-id="ME018" data-category="Vacunas" data-price="8500" data-stock="48">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me018.svg" class="card-img-top catalog-image" alt="Ilustración del producto Nobivac DHPPi">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Vacunas</span>
+        <span class="small text-muted">ME018</span>
+      </div>
+      <h2 class="h5 card-title">Nobivac DHPPi</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Vacuna polivalente</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Vial 1 dosis</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">48</span></p>
+      <p class="h5 fw-bold price mb-3">$8.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME018">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me018" data-product-id="ME018">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me019" data-id="ME019" data-category="Vacunas" data-price="5800" data-stock="60">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me019.svg" class="card-img-top catalog-image" alt="Ilustración del producto Nobivac Rabies">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Vacunas</span>
+        <span class="small text-muted">ME019</span>
+      </div>
+      <h2 class="h5 card-title">Nobivac Rabies</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Vacuna antirrábica</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Vial 1 dosis</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">60</span></p>
+      <p class="h5 fw-bold price mb-3">$5.800</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME019">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me019" data-product-id="ME019">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me020" data-id="ME020" data-category="Vacunas" data-price="7200" data-stock="36">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me020.svg" class="card-img-top catalog-image" alt="Ilustración del producto Felocell CVR">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Vacunas</span>
+        <span class="small text-muted">ME020</span>
+      </div>
+      <h2 class="h5 card-title">Felocell CVR</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Vacuna triple felina</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Vial 1 dosis</p>
+      <p class="small mb-2"><strong>Especie:</strong> Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">36</span></p>
+      <p class="h5 fw-bold price mb-3">$7.200</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME020">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me020" data-product-id="ME020">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me021" data-id="ME021" data-category="Suplementos" data-price="9900" data-stock="30">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me021.svg" class="card-img-top catalog-image" alt="Ilustración del producto Omega vet 3-6-9">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Suplementos</span>
+        <span class="small text-muted">ME021</span>
+      </div>
+      <h2 class="h5 card-title">Omega vet 3-6-9</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Ácidos grasos omega</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Frasco 100ml</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro / Gato</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">30</span></p>
+      <p class="h5 fw-bold price mb-3">$9.900</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME021">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me021" data-product-id="ME021">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="col" id="producto-me022" data-id="ME022" data-category="Suplementos" data-price="14500" data-stock="25">
+  <div class="card h-100 product-card">
+    <img src="../img/productos/me022.svg" class="card-img-top catalog-image" alt="Ilustración del producto Condrovet forte">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between gap-2 mb-2">
+        <span class="badge text-bg-light">Suplementos</span>
+        <span class="small text-muted">ME022</span>
+      </div>
+      <h2 class="h5 card-title">Condrovet forte</h2>
+      <p class="small mb-1"><strong>Principio activo:</strong> Condroitín+Glucos.</p>
+      <p class="small mb-1"><strong>Presentación:</strong> Blíster 30 comp.</p>
+      <p class="small mb-2"><strong>Especie:</strong> Perro</p>
+      <p class="small mb-2"><strong>Stock:</strong> <span class="stock-value">25</span></p>
+      <p class="h5 fw-bold price mb-3">$14.500</p>
+      <div class="mt-auto d-flex gap-2">
+        <a class="btn btn-outline-primary flex-grow-1" href="detalle-producto.html?id=ME022">Ver detalles</a>
+        <button type="button" class="btn btn-primary btn-agregar-carrito" id="btnCarrito-me022" data-product-id="ME022">
+          <i class="bi bi-cart-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <h2 class="h5 fw-bold">Veterinaria San Marcos</h2>
+        <p class="mb-0">Atención veterinaria para perros, gatos, aves y conejos.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="h6 fw-bold">Navegación</h2>
+        <ul class="list-unstyled footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../servicios.html">Servicios</a></li>
+          <li><a href="../reservar.html">Reservar hora</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="h6 fw-bold">Contacto</h2>
+        <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>Rancagua, Región de O'Higgins</p>
+        <p class="mb-0"><i class="bi bi-envelope me-2"></i>contacto@veterinariasanmarcos.cl</p>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="small d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>Equipo: Veterinaria San Marcos</span>
+      <span>DSY1104 – 2026</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/script.js"></script>
+</body>
+</html>
+

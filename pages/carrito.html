@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Veterinaria San Marcos - Sistema de reservas y servicios veterinarios">
+  <title>Carrito | Veterinaria San Marcos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html">
+        <span class="brand-icon" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span>
+        <span>Veterinaria San Marcos</span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Abrir menú de navegación">
+      <label class="nav-toggle-label d-lg-none" for="navToggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="navbar-collapse custom-collapse" id="mainNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="reservar.html">Reservar hora</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mis-reservas.html">Mis reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-primary btn-sm px-3" href="login.html" id="btnLoginNav">
+              <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container py-5">
+      <span class="eyebrow">E-commerce complementario</span>
+      <h1 class="display-6 fw-bold mt-2">Carrito de compras</h1>
+      <p class="lead text-muted mb-0">Revisa los productos seleccionados.</p>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div id="carritoVacio" class="empty-state">
+            <i class="bi bi-cart-x"></i>
+            <h2 class="h4 fw-bold mt-3">Tu carrito está vacío</h2>
+            <p class="text-muted">Agrega productos desde el catálogo para verlos aquí.</p>
+            <a href="productos.html" class="btn btn-primary">Ver productos</a>
+          </div>
+          <div class="d-none" id="contenedorCarrito">
+            <div id="listaCarrito" class="d-grid gap-3"></div>
+            <button type="button" class="btn btn-outline-danger mt-3" id="btnVaciarCarrito">
+              <i class="bi bi-trash me-1"></i>Vaciar carrito
+            </button>
+          </div>
+        </div>
+        <aside class="col-lg-4">
+          <div class="summary-card">
+            <h2 class="h5 fw-bold">Resumen</h2>
+            <hr>
+            <div class="d-flex justify-content-between"><span>Subtotal</span><strong id="subtotalCarrito">$0</strong></div>
+            <div class="d-flex justify-content-between mt-2"><span>Total</span><strong class="h4 mb-0" id="totalCarrito">$0</strong></div>
+            <button type="button" class="btn btn-primary w-100 mt-4" id="btnFinalizarCompra">Finalizar compra</button>
+            <div class="alert alert-success d-none mt-3" id="mensajeCompraExitosa" role="status"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <h2 class="h5 fw-bold">Veterinaria San Marcos</h2>
+        <p class="mb-0">Atención veterinaria para perros, gatos, aves y conejos.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="h6 fw-bold">Navegación</h2>
+        <ul class="list-unstyled footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../servicios.html">Servicios</a></li>
+          <li><a href="../reservar.html">Reservar hora</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="h6 fw-bold">Contacto</h2>
+        <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>Rancagua, Región de O'Higgins</p>
+        <p class="mb-0"><i class="bi bi-envelope me-2"></i>contacto@veterinariasanmarcos.cl</p>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="small d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>Equipo: Veterinaria San Marcos</span>
+      <span>DSY1104 – 2026</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/script.js"></script>
+</body>
+</html>
+

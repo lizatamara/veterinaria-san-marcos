@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Veterinaria San Marcos - Sistema de reservas y servicios veterinarios">
+  <title>Registro | Veterinaria San Marcos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html">
+        <span class="brand-icon" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span>
+        <span>Veterinaria San Marcos</span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Abrir menú de navegación">
+      <label class="nav-toggle-label d-lg-none" for="navToggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <div class="navbar-collapse custom-collapse" id="mainNavigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="reservar.html">Reservar hora</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mis-reservas.html">Mis reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-primary btn-sm px-3" href="login.html" id="btnLoginNav">
+              <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="py-5">
+  <div class="container">
+    <div class="auth-card auth-card-wide mx-auto">
+      <div class="mb-4">
+        <span class="eyebrow">Cuenta de cliente</span>
+        <h1 class="h3 fw-bold mt-2">Crear una cuenta</h1>
+        <p class="text-muted">Regístrate para gestionar tus reservas y datos de tus mascotas.</p>
+      </div>
+      <form id="formRegistro" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="nombreRegistro" class="form-label">Nombre *</label>
+            <input type="text" class="form-control" id="nombreRegistro" name="nombre" required>
+            <div class="invalid-feedback" id="errorNombreRegistro"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="apellidoRegistro" class="form-label">Apellido *</label>
+            <input type="text" class="form-control" id="apellidoRegistro" name="apellido" required>
+            <div class="invalid-feedback" id="errorApellidoRegistro"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="fechaNacimientoRegistro" class="form-label">Fecha de nacimiento *</label>
+            <input type="date" class="form-control" id="fechaNacimientoRegistro" name="fechaNacimiento" required>
+            <div class="invalid-feedback" id="errorFechaNacimientoRegistro"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="emailRegistro" class="form-label">Correo electrónico *</label>
+            <input type="email" class="form-control" id="emailRegistro" name="email" placeholder="ejemplo@duoc.cl" required>
+            <div class="invalid-feedback" id="errorEmailRegistro"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="passwordRegistro" class="form-label">Contraseña *</label>
+            <input type="password" class="form-control" id="passwordRegistro" name="password" required>
+            <div class="form-text">Define aquí las reglas de seguridad que implementarás con JavaScript.</div>
+            <div class="invalid-feedback" id="errorPasswordRegistro"></div>
+          </div>
+          <div class="col-md-6">
+            <label for="confirmPasswordRegistro" class="form-label">Confirmar contraseña *</label>
+            <input type="password" class="form-control" id="confirmPasswordRegistro" name="confirmPassword" required>
+            <div class="invalid-feedback" id="errorConfirmPasswordRegistro"></div>
+          </div>
+          <div class="col-md-8">
+            <label for="direccionRegistro" class="form-label">Dirección *</label>
+            <input type="text" class="form-control" id="direccionRegistro" name="direccion" required>
+            <div class="invalid-feedback" id="errorDireccionRegistro"></div>
+          </div>
+          <div class="col-md-4">
+            <label for="regionRegistro" class="form-label">Región *</label>
+            <select class="form-select" id="regionRegistro" name="region" required>
+              <option value="">Selecciona</option>
+              <option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option>
+              <option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option>
+              <option>Metropolitana de Santiago</option><option>O'Higgins</option><option>Maule</option>
+              <option>Ñuble</option><option>Biobío</option><option>La Araucanía</option>
+              <option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option>
+            </select>
+            <div class="invalid-feedback" id="errorRegionRegistro"></div>
+          </div>
+          <fieldset class="col-12">
+            <legend class="form-label">Género *</legend>
+            <div class="d-flex flex-wrap gap-3">
+              <div class="form-check"><input class="form-check-input" type="radio" name="genero" id="generoFemenino" value="Femenino" required><label class="form-check-label" for="generoFemenino">Femenino</label></div>
+              <div class="form-check"><input class="form-check-input" type="radio" name="genero" id="generoMasculino" value="Masculino"><label class="form-check-label" for="generoMasculino">Masculino</label></div>
+              <div class="form-check"><input class="form-check-input" type="radio" name="genero" id="generoOtro" value="Otro"><label class="form-check-label" for="generoOtro">Otro</label></div>
+            </div>
+            <div class="invalid-feedback" id="errorGeneroRegistro"></div>
+          </fieldset>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terminosRegistro" name="terminos" required>
+              <label class="form-check-label" for="terminosRegistro">Acepto las condiciones de registro.</label>
+            </div>
+            <div class="invalid-feedback" id="errorTerminosRegistro"></div>
+          </div>
+        </div>
+        <div class="alert alert-danger d-none mt-4" id="mensajeErrorRegistro" role="alert"></div>
+        <div class="alert alert-success d-none mt-4" id="mensajeExitoRegistro" role="status"></div>
+        <button type="submit" class="btn btn-primary mt-4" id="btnRegistro">Crear cuenta</button>
+      </form>
+      <p class="mt-4 mb-0">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <h2 class="h5 fw-bold">Veterinaria San Marcos</h2>
+        <p class="mb-0">Atención veterinaria para perros, gatos, aves y conejos.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h2 class="h6 fw-bold">Navegación</h2>
+        <ul class="list-unstyled footer-links">
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../servicios.html">Servicios</a></li>
+          <li><a href="../reservar.html">Reservar hora</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="h6 fw-bold">Contacto</h2>
+        <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>Rancagua, Región de O'Higgins</p>
+        <p class="mb-0"><i class="bi bi-envelope me-2"></i>contacto@veterinariasanmarcos.cl</p>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="small d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>Equipo: Veterinaria San Marcos</span>
+      <span>DSY1104 – 2026</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/script.js"></script>
+</body>
+</html>
+
