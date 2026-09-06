@@ -1,749 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Veterinaria San Marcos - Sistema de reservas y servicios veterinarios">
-  <title>Servicios | Veterinaria San Marcos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Veterinaria San Marcos - Sistema de reservas y servicios veterinarios" name="description"/>
+<title>Servicios | Veterinaria San Marcos</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
 </head>
-
 <body>
-
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm" aria-label="Navegación principal">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html">
-        <span class="brand-icon" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i></span>
-        <span>Veterinaria San Marcos</span>
-      </a>
-
-      <input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Abrir menú de navegación">
-      <label class="nav-toggle-label d-lg-none" for="navToggle" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </label>
-
-      <div class="navbar-collapse custom-collapse" id="mainNavigation">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="reservar.html">Reservar hora</a></li>
-          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="mis-reservas.html">Mis reservas</a></li>
-          <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-primary btn-sm px-3" href="login.html" id="btnLoginNav">
-              <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+<nav aria-label="Navegación principal" class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html">
+<span aria-hidden="true" class="brand-icon"><i class="bi bi-heart-pulse-fill"></i></span>
+<span>Veterinaria San Marcos</span>
+</a>
+<input aria-label="Abrir menú de navegación" class="nav-toggle" id="navToggle" type="checkbox"/>
+<label aria-hidden="true" class="nav-toggle-label d-lg-none" for="navToggle">
+<span></span><span></span><span></span>
+</label>
+<div class="navbar-collapse custom-collapse" id="mainNavigation">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+<li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+<li class="nav-item"><a class="nav-link" href="reservar.html">Reservar hora</a></li>
+<li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+<li class="nav-item"><a class="nav-link" href="mis-reservas.html">Mis reservas</a></li>
+<li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quiénes somos</a></li>
+<li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+<li class="nav-item ms-lg-2">
+<a class="btn btn-primary btn-sm px-3" href="login.html" id="btnLoginNav">
+<i class="bi bi-person-circle me-1"></i> Iniciar sesión
             </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+</li>
+</ul>
+</div>
+</div>
+</nav>
 </header>
-
 <main>
-  <section class="page-hero">
-    <div class="container py-5">
-      <span class="eyebrow">Catálogo de servicios</span>
-      <h1 class="display-6 fw-bold mt-2">Servicios veterinarios</h1>
-      <p class="lead text-muted mb-0">Consulta las atenciones disponibles y solicita una hora para tu mascota.</p>
-    </div>
-  </section>
-
-  <section class="py-5">
-    <div class="container">
-      <div class="filter-panel mb-4">
-        <div class="row g-3 align-items-end">
-          <div class="col-md-4">
-            <label for="filtroCategoriaServicio" class="form-label fw-semibold">Categoría</label>
-            <select class="form-select" id="filtroCategoriaServicio">
-              <option value="">Todas las categorías</option>
-              <option value="Consultas">Consultas</option>
-              <option value="Vacunación">Vacunación</option>
-              <option value="Cirugía">Cirugía</option>
-              <option value="Desparasitación">Desparasitación</option>
-              <option value="Exámenes">Exámenes</option>
-              <option value="Otros">Otros</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <label for="filtroPrecioMinServicio" class="form-label fw-semibold">Precio mínimo</label>
-            <input type="number" class="form-control" id="filtroPrecioMinServicio" min="0" placeholder="Ej. 10000">
-          </div>
-          <div class="col-md-3">
-            <label for="filtroPrecioMaxServicio" class="form-label fw-semibold">Precio máximo</label>
-            <input type="number" class="form-control" id="filtroPrecioMaxServicio" min="0" placeholder="Ej. 50000">
-          </div>
-          <div class="col-md-2">
-            <button class="btn btn-outline-secondary w-100" type="button" id="btnLimpiarFiltrosServicios">Limpiar</button>
-          </div>
-        </div>
-        <div class="small text-muted mt-3" id="resultadoFiltroServicios" aria-live="polite">33 servicios disponibles</div>
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="catalogoServicios">
-        
-<article class="col" id="servicio-sv001" data-id="SV001" data-category="Consultas" data-price="15000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/sv001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Consulta general">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Consultas</span>
-        <span class="small text-muted">SV001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-sv001">Consulta general</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-sv001">$15.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=SV001" id="btnDetalle-sv001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=SV001" id="btnReservar-sv001" aria-label="Reservar Consulta general"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-sv002" data-id="SV002" data-category="Consultas" data-price="25000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/sv002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Consulta urgencia">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Consultas</span>
-        <span class="small text-muted">SV002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-sv002">Consulta urgencia</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-sv002">$25.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Fuera de horario +$10.000</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=SV002" id="btnDetalle-sv002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=SV002" id="btnReservar-sv002" aria-label="Reservar Consulta urgencia"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-sv003" data-id="SV003" data-category="Consultas" data-price="10000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/sv003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Control postoperatorio">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Consultas</span>
-        <span class="small text-muted">SV003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-sv003">Control postoperatorio</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 20 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-sv003">$10.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=SV003" id="btnDetalle-sv003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=SV003" id="btnReservar-sv003" aria-label="Reservar Control postoperatorio"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-sv004" data-id="SV004" data-category="Consultas" data-price="18000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/sv004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Consulta ave / conejo">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Consultas</span>
-        <span class="small text-muted">SV004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-sv004">Consulta ave / conejo</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Ave / Conejo</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-sv004">$18.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=SV004" id="btnDetalle-sv004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=SV004" id="btnReservar-sv004" aria-label="Reservar Consulta ave / conejo"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-sv005" data-id="SV005" data-category="Consultas" data-price="20000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/sv005.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Segunda opinión médica">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Consultas</span>
-        <span class="small text-muted">SV005</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-sv005">Segunda opinión médica</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Todas</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 40 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-sv005">$20.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Requiere ficha previa</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=SV005" id="btnDetalle-sv005">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=SV005" id="btnReservar-sv005" aria-label="Reservar Segunda opinión médica"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va001" data-id="VA001" data-category="Vacunación" data-price="12000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna antirrábica canina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va001">Vacuna antirrábica canina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va001">$12.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Obligatoria por ley</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA001" id="btnDetalle-va001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA001" id="btnReservar-va001" aria-label="Reservar Vacuna antirrábica canina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va002" data-id="VA002" data-category="Vacunación" data-price="18000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna sextuple canina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va002">Vacuna sextuple canina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va002">$18.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Refuerzo anual</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA002" id="btnDetalle-va002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA002" id="btnReservar-va002" aria-label="Reservar Vacuna sextuple canina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va003" data-id="VA003" data-category="Vacunación" data-price="15000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna bivalente felina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va003">Vacuna bivalente felina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va003">$15.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Refuerzo anual</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA003" id="btnDetalle-va003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA003" id="btnReservar-va003" aria-label="Reservar Vacuna bivalente felina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va004" data-id="VA004" data-category="Vacunación" data-price="17000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna triple felina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va004">Vacuna triple felina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va004">$17.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Refuerzo anual</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA004" id="btnDetalle-va004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA004" id="btnReservar-va004" aria-label="Reservar Vacuna triple felina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va005" data-id="VA005" data-category="Vacunación" data-price="14000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va005.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna Bordetella canina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA005</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va005">Vacuna Bordetella canina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va005">$14.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Tos de las perreras</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA005" id="btnDetalle-va005">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA005" id="btnReservar-va005" aria-label="Reservar Vacuna Bordetella canina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-va006" data-id="VA006" data-category="Vacunación" data-price="12000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/va006.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Vacuna antirrábica felina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Vacunación</span>
-        <span class="small text-muted">VA006</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-va006">Vacuna antirrábica felina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-va006">$12.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=VA006" id="btnDetalle-va006">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=VA006" id="btnReservar-va006" aria-label="Reservar Vacuna antirrábica felina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci001" data-id="CI001" data-category="Cirugía" data-price="80000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Esterilización hembra canina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci001">Esterilización hembra canina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perra</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 90 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci001">$80.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye anestesia y hospitalización 24h</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI001" id="btnDetalle-ci001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI001" id="btnReservar-ci001" aria-label="Reservar Esterilización hembra canina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci002" data-id="CI002" data-category="Cirugía" data-price="60000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Esterilización macho canino">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci002">Esterilización macho canino</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 60 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci002">$60.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye anestesia</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI002" id="btnDetalle-ci002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI002" id="btnReservar-ci002" aria-label="Reservar Esterilización macho canino"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci003" data-id="CI003" data-category="Cirugía" data-price="65000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Esterilización hembra felina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci003">Esterilización hembra felina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gata</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 60 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci003">$65.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye anestesia y hospitalización 12h</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI003" id="btnDetalle-ci003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI003" id="btnReservar-ci003" aria-label="Reservar Esterilización hembra felina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci004" data-id="CI004" data-category="Cirugía" data-price="50000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Esterilización macho felino">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci004">Esterilización macho felino</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 45 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci004">$50.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye anestesia</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI004" id="btnDetalle-ci004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI004" id="btnReservar-ci004" aria-label="Reservar Esterilización macho felino"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci005" data-id="CI005" data-category="Cirugía" data-price="120000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci005.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Extirpación de tumor cutáneo">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI005</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci005">Extirpación de tumor cutáneo</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 60 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci005">$120.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Precio referencial; varía según tamaño</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI005" id="btnDetalle-ci005">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI005" id="btnReservar-ci005" aria-label="Reservar Extirpación de tumor cutáneo"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ci006" data-id="CI006" data-category="Cirugía" data-price="180000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ci006.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Cesárea de urgencia">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Cirugía</span>
-        <span class="small text-muted">CI006</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ci006">Cesárea de urgencia</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perra / Gata</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 120 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ci006">$180.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=CI006" id="btnDetalle-ci006">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=CI006" id="btnReservar-ci006" aria-label="Reservar Cesárea de urgencia"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-de001" data-id="DE001" data-category="Desparasitación" data-price="8000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/de001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Desparasitación interna pequeños (&lt;10 kg)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Desparasitación</span>
-        <span class="small text-muted">DE001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-de001">Desparasitación interna pequeños (&lt;10 kg)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 5 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-de001">$8.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=DE001" id="btnDetalle-de001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=DE001" id="btnReservar-de001" aria-label="Reservar Desparasitación interna pequeños (&lt;10 kg)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-de002" data-id="DE002" data-category="Desparasitación" data-price="9500">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/de002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Desparasitación interna medianos (10-25 kg)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Desparasitación</span>
-        <span class="small text-muted">DE002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-de002">Desparasitación interna medianos (10-25 kg)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 5 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-de002">$9.500</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=DE002" id="btnDetalle-de002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=DE002" id="btnReservar-de002" aria-label="Reservar Desparasitación interna medianos (10-25 kg)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-de003" data-id="DE003" data-category="Desparasitación" data-price="11000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/de003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Desparasitación interna grandes (&gt;25 kg)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Desparasitación</span>
-        <span class="small text-muted">DE003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-de003">Desparasitación interna grandes (&gt;25 kg)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 5 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-de003">$11.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=DE003" id="btnDetalle-de003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=DE003" id="btnReservar-de003" aria-label="Reservar Desparasitación interna grandes (&gt;25 kg)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-de004" data-id="DE004" data-category="Desparasitación" data-price="8000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/de004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Desparasitación interna felina">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Desparasitación</span>
-        <span class="small text-muted">DE004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-de004">Desparasitación interna felina</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 5 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-de004">$8.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=DE004" id="btnDetalle-de004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=DE004" id="btnReservar-de004" aria-label="Reservar Desparasitación interna felina"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-de005" data-id="DE005" data-category="Desparasitación" data-price="7500">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/de005.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Antiparasitario externo (pipeta)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Desparasitación</span>
-        <span class="small text-muted">DE005</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-de005">Antiparasitario externo (pipeta)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 5 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-de005">$7.500</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye aplicación</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=DE005" id="btnDetalle-de005">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=DE005" id="btnReservar-de005" aria-label="Reservar Antiparasitario externo (pipeta)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ex001" data-id="EX001" data-category="Exámenes" data-price="22000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ex001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Hemograma completo">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Exámenes</span>
-        <span class="small text-muted">EX001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ex001">Hemograma completo</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ex001">$22.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Resultado en 24-48 h</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=EX001" id="btnDetalle-ex001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=EX001" id="btnReservar-ex001" aria-label="Reservar Hemograma completo"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ex002" data-id="EX002" data-category="Exámenes" data-price="35000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ex002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Perfil bioquímico completo">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Exámenes</span>
-        <span class="small text-muted">EX002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ex002">Perfil bioquímico completo</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ex002">$35.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Resultado en 24-48 h</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=EX002" id="btnDetalle-ex002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=EX002" id="btnReservar-ex002" aria-label="Reservar Perfil bioquímico completo"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ex003" data-id="EX003" data-category="Exámenes" data-price="28000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ex003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Radiografía (1 proyección)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Exámenes</span>
-        <span class="small text-muted">EX003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ex003">Radiografía (1 proyección)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 20 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ex003">$28.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=EX003" id="btnDetalle-ex003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=EX003" id="btnReservar-ex003" aria-label="Reservar Radiografía (1 proyección)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ex004" data-id="EX004" data-category="Exámenes" data-price="45000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ex004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Ecografía abdominal">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Exámenes</span>
-        <span class="small text-muted">EX004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ex004">Ecografía abdominal</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 30 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ex004">$45.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=EX004" id="btnDetalle-ex004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=EX004" id="btnReservar-ex004" aria-label="Reservar Ecografía abdominal"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ex005" data-id="EX005" data-category="Exámenes" data-price="18000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ex005.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Test de leishmaniasis">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Exámenes</span>
-        <span class="small text-muted">EX005</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ex005">Test de leishmaniasis</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 20 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ex005">$18.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=EX005" id="btnDetalle-ex005">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=EX005" id="btnReservar-ex005" aria-label="Reservar Test de leishmaniasis"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ot001" data-id="OT001" data-category="Otros" data-price="5000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ot001.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Corte de uñas">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Otros</span>
-        <span class="small text-muted">OT001</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ot001">Corte de uñas</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 15 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ot001">$5.000</p>
-      <p class="small text-muted mb-3">&nbsp;</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=OT001" id="btnDetalle-ot001">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=OT001" id="btnReservar-ot001" aria-label="Reservar Corte de uñas"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ot002" data-id="OT002" data-category="Otros" data-price="55000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ot002.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Limpieza dental">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Otros</span>
-        <span class="small text-muted">OT002</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ot002">Limpieza dental</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 45 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ot002">$55.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Requiere anestesia</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=OT002" id="btnDetalle-ot002">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=OT002" id="btnReservar-ot002" aria-label="Reservar Limpieza dental"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ot003" data-id="OT003" data-category="Otros" data-price="15000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ot003.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Microchip identificación">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Otros</span>
-        <span class="small text-muted">OT003</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ot003">Microchip identificación</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 10 min</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ot003">$15.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye registro</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=OT003" id="btnDetalle-ot003">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=OT003" id="btnReservar-ot003" aria-label="Reservar Microchip identificación"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="col" id="servicio-ot004" data-id="OT004" data-category="Otros" data-price="30000">
-  <div class="card h-100 service-card">
-    <img src="../img/servicios/ot004.svg" class="card-img-top catalog-image" alt="Ilustración del servicio Hospitalización (por día)">
-    <div class="card-body d-flex flex-column">
-      <div class="d-flex justify-content-between gap-2 mb-2">
-        <span class="badge text-bg-light">Otros</span>
-        <span class="small text-muted">OT004</span>
-      </div>
-      <h2 class="h5 card-title" id="nombre-ot004">Hospitalización (por día)</h2>
-      <p class="card-text small mb-2"><strong>Especie:</strong> Perro / Gato</p>
-      <p class="card-text small mb-1"><strong>Duración:</strong> 24 h</p>
-      <p class="h5 fw-bold price mb-1" id="precio-ot004">$30.000</p>
-      <p class="small text-muted mb-3"><i class="bi bi-info-circle me-1"></i>Incluye monitoreo y alimentación básica</p>
-      <div class="mt-auto d-flex gap-2">
-        <a class="btn btn-outline-primary flex-grow-1" href="detalle-servicio.html?id=OT004" id="btnDetalle-ot004">Ver detalles</a>
-        <a class="btn btn-primary" href="reservar.html?servicio=OT004" id="btnReservar-ot004" aria-label="Reservar Hospitalización (por día)"><i class="bi bi-calendar-plus"></i></a>
-      </div>
-    </div>
-  </div>
-</article>
-      </div>
-    </div>
-  </section>
+<section class="page-hero">
+<div class="container py-5">
+<span class="eyebrow">Catálogo de servicios</span>
+<h1 class="display-6 fw-bold mt-2">Servicios veterinarios</h1>
+<p class="lead text-muted mb-0">Consulta las atenciones disponibles y solicita una hora para tu mascota.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container">
+<div class="filter-panel mb-4">
+<div class="row g-3 align-items-end">
+<div class="col-md-4">
+<label class="form-label fw-semibold" for="filtroCategoriaServicio">Categoría</label>
+<select class="form-select" id="filtroCategoriaServicio">
+<option value="">Todas las categorías</option>
+<option value="Consultas">Consultas</option>
+<option value="Vacunación">Vacunación</option>
+<option value="Cirugía">Cirugía</option>
+<option value="Desparasitación">Desparasitación</option>
+<option value="Exámenes">Exámenes</option>
+<option value="Otros">Otros</option>
+</select>
+</div>
+<div class="col-md-3">
+<label class="form-label fw-semibold" for="filtroPrecioMinServicio">Precio mínimo</label>
+<input class="form-control" id="filtroPrecioMinServicio" min="0" placeholder="Ej. 10000" type="number"/>
+</div>
+<div class="col-md-3">
+<label class="form-label fw-semibold" for="filtroPrecioMaxServicio">Precio máximo</label>
+<input class="form-control" id="filtroPrecioMaxServicio" min="0" placeholder="Ej. 50000" type="number"/>
+</div>
+<div class="col-md-2">
+<button class="btn btn-outline-secondary w-100" id="btnLimpiarFiltrosServicios" type="button">Limpiar</button>
+</div>
+</div>
+<div aria-live="polite" class="small text-muted mt-3" id="resultadoFiltroServicios">Servicios disponibles</div>
+</div>
+<div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="catalogoServicios">
+<!-- Las tarjetas se crearán dinámicamente con JavaScript a partir de los datos guardados en LocalStorage. -->
+</div>
+</div>
+</section>
 </main>
-
 <footer class="site-footer mt-5">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-lg-5">
-        <h2 class="h5 fw-bold">Veterinaria San Marcos</h2>
-        <p class="mb-0">Atención veterinaria para perros, gatos, aves y conejos.</p>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <h2 class="h6 fw-bold">Navegación</h2>
-        <ul class="list-unstyled footer-links">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="reservar.html">Reservar hora</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 col-lg-4">
-        <h2 class="h6 fw-bold">Contacto</h2>
-        <p class="mb-1"><i class="bi bi-geo-alt me-2"></i>Rancagua, Región de O'Higgins</p>
-        <p class="mb-0"><i class="bi bi-envelope me-2"></i>contacto@veterinariasanmarcos.cl</p>
-      </div>
-    </div>
-    <hr class="my-4">
-    <div class="small d-flex flex-column flex-md-row justify-content-between gap-2">
-      <span>Equipo: Veterinaria San Marcos</span>
-      <span>DSY1104 – 2026</span>
-    </div>
-  </div>
+<div class="container py-5">
+<div class="row g-4">
+<div class="col-lg-5">
+<h2 class="h5 fw-bold">Veterinaria San Marcos</h2>
+<p class="mb-0">Atención veterinaria para perros, gatos, aves y conejos.</p>
+</div>
+<div class="col-sm-6 col-lg-3">
+<h2 class="h6 fw-bold">Navegación</h2>
+<ul class="list-unstyled footer-links">
+<li><a href="../index.html">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="reservar.html">Reservar hora</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-lg-4">
+<h2 class="h6 fw-bold">Contacto</h2>
+<p class="mb-1"><i class="bi bi-geo-alt me-2"></i>Rancagua, Región de O'Higgins</p>
+<p class="mb-0"><i class="bi bi-envelope me-2"></i>contacto@veterinariasanmarcos.cl</p>
+</div>
+</div>
+<hr class="my-4"/>
+<div class="small d-flex flex-column flex-md-row justify-content-between gap-2">
+<span>Equipo: Veterinaria San Marcos</span>
+<span>DSY1104 – 2026</span>
+</div>
+</div>
 </footer>
-
-
-<script src="../../js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>
-

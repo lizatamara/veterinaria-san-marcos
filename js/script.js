@@ -1,19 +1,17 @@
-/*
- * script.js
- * Veterinaria San Marcos
- * DSY1104 – 2026
- *
- * Este archivo queda preparado para implementar la lógica con JavaScript Vanilla.
- * La interfaz HTML ya contiene IDs, clases y data-* attributes para facilitar
- * la manipulación del DOM y el uso de LocalStorage.
- *
- * Funcionalidades pendientes para esta entrega:
- * 1. Inicializar/consultar LocalStorage.
- * 2. Registro y validaciones.
- * 3. Login y control de 3 intentos fallidos.
- * 4. Filtros dinámicos de servicios y productos.
- * 5. Carga de detalles según ?id=.
- * 6. Gestión del carrito.
- * 7. Creación, consulta, actualización y eliminación de reservas.
- * 8. Mensajes personalizados de éxito/error.
- */
+// ============================================================
+// Veterinaria San Marcos - JavaScript
+// ============================================================
+// La lógica de JavaScript se implementará en esta carpeta.
+//
+// Ideas de organización para la entrega:
+// - storage.js: funciones para trabajar con LocalStorage.
+// - productos.js: cargar productos y crear sus cards.
+// - detalle-producto.js: mostrar el producto seleccionado.
+// - servicios.js: cargar servicios y crear sus cards.
+// - detalle-servicio.js: mostrar el servicio seleccionado.
+// - reservas.js: guardar y consultar reservas.
+// - usuarios.js: registrar e iniciar sesión.
+// - carrito.js: administrar los productos del carrito.
+//
+// Este archivo queda deliberadamente sin lógica de negocio.
+// ============================================================

@@ -1,37 +1,20 @@
-# Veterinaria San Marcos — DSY1104
+# Veterinaria San Marcos — Frontend EV1
 
-Frontend de la primera evaluación.
+Proyecto frontend para un sistema de reservas veterinarias con funcionalidades complementarias de e-commerce.
 
 ## Estructura
+- `index.html`: página principal.
+- `pages/`: páginas internas.
+- `css/styles.css`: estilos personalizados.
+- `js/script.js`: archivo base; la lógica JavaScript queda para la implementación del estudiante.
+- `img/`: imágenes de productos y servicios.
 
-- `index.html`
-- `pages/`
-- `css/styles.css`
-- `js/script.js`
-- `img/`
+## Modelo de datos
+Los productos y servicios se consideran datos precargados y deberán ser administrados mediante LocalStorage. Las páginas `productos.html` y `servicios.html` son plantillas: sus tarjetas se generarán mediante JavaScript.
+
+`detalle-producto.html` y `detalle-servicio.html` también son plantillas reutilizables; el detalle se cargará según el identificador seleccionado.
+
+Las reservas y usuarios serán creados por el usuario y guardados en LocalStorage.
 
 ## Alcance
-
-La solución prioriza el sistema de reservas de Veterinaria San Marcos y utiliza algunos requisitos de e-commerce como catálogo, filtros, detalle de elementos, carrito, registro y login.
-
-## JavaScript
-
-`js/script.js` queda como archivo base para implementar:
-- LocalStorage
-- validaciones
-- filtros
-- reservas
-- login
-- carrito
-- mensajes de error/éxito
-
-## Imágenes
-
-Las imágenes SVG incluidas son placeholders generados para que la estructura funcione desde el inicio. Pueden reemplazarse posteriormente por imágenes reales dentro de `img/servicios/` y `img/productos/`.
-
-## Pendiente del equipo
-
-- Reemplazar nombres de integrantes.
-- Insertar Google Maps en `pages/contacto.html`.
-- Implementar la lógica JavaScript.
-- Probar responsive en 360 px, 768 px y 1280 px.
+No se incluye backend, Spring, base de datos, panel de administración, roles administrativos, AWS ni Google Maps en esta entrega.
