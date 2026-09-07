@@ -14,3 +14,11 @@ function agregarUsuario(usuario){
     usuarios.push(usuario);
     guardarUsuarios(usuarios);
 }
+
+if (!localStorage.getItem("servicios")) {
+    localStorage.setItem("servicios", JSON.stringify(serviciosIniciales));
+}
+
+if (!localStorage.getItem("productos")) {
+    localStorage.setItem("productos", JSON.stringify(productosIniciales));
+}
