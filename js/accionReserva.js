@@ -1,14 +1,14 @@
 function cargarServicios() {
     const selectServicio = document.getElementById("servicioReserva");
+    if (!selectServicio) return;
 
-    // Obtenemos los servicios del localStorage
+    // Obtenemos los servicios usando la función centralizada o localStorage
     const serviciosStorage = JSON.parse(localStorage.getItem("servicios")) || [];
 
     serviciosStorage.forEach(servicio => {
         const option = document.createElement("option");
-        // Guardamos el ID como valor
         option.value = servicio.id; 
-        option.textContent = `${servicio.nombre}`; 
+        option.textContent = servicio.nombre; 
         selectServicio.appendChild(option);
     });
 }
@@ -18,28 +18,23 @@ function inicializarResumenServicio() {
     const resumenServicio = document.getElementById("resumenServicio");
     const resumenPrecio = document.getElementById("resumenPrecio");
 
+    if (!selectServicio) return;
 
-    // Escuchamos cuando el usuario cambia la selección del servicio
     selectServicio.addEventListener("change", function () {
         const idSeleccionado = this.value;
         const serviciosStorage = JSON.parse(localStorage.getItem("servicios")) || [];
 
         if (idSeleccionado === "") {
-            // Si el usuario vuelve a la opción por defecto ("Selecciona un servicio")
-            resumenServicio.textContent = "No seleccionado";
-            resumenPrecio.textContent = "$0";
+            if (resumenServicio) resumenServicio.textContent = "No seleccionado";
+            if (resumenPrecio) resumenPrecio.textContent = "$0";
             return;
         }
 
-        // Buscamos el servicio exacto que coincide con el ID seleccionado
         const servicioEncontrado = serviciosStorage.find(s => s.id === idSeleccionado);
 
         if (servicioEncontrado) {
-            // Actualizamos el nombre en el resumen de la derecha
-            resumenServicio.textContent = servicioEncontrado.nombre;
-            
-            // Actualizamos el precio formateado con puntos de miles (ej: $15.000)
-            resumenPrecio.textContent = `$${servicioEncontrado.precio.toLocaleString()}`;
+            if (resumenServicio) resumenServicio.textContent = servicioEncontrado.nombre;
+            if (resumenPrecio) resumenPrecio.textContent = `$${servicioEncontrado.precio.toLocaleString()}`;
         }
     });
 }
@@ -56,7 +51,7 @@ function inicializarResumenFecha() {
     const inputHora = document.getElementById("horaReserva");
     const inputMascota = document.getElementById("nombreMascota");
 
-    // 3. Capturar elementos del resumen
+    // 3. Capturar elementos individuales del resumen
     const resumenFecha = document.getElementById("resumenFecha");
     const resumenHora = document.getElementById("resumenHora");
     const resumenMascota = document.getElementById("resumenMascota");
@@ -88,14 +83,53 @@ function inicializarResumenFecha() {
     // 6. Actualización en tiempo real del nombre de la mascota
     if (inputMascota && resumenMascota) {
         inputMascota.addEventListener("input", (e) => {
-            resumenMascota.textContent = e.target.value.trim() || "No especificada";
+            resumenMascota.textContent = e.target.value.trim() || "No ingresada";
         });
     }
 }
 
-// Ejecutamos todas las funciones al cargar la página
+function guardarReserva(evento) {
+    evento.preventDefault();
+
+    const servicioId = document.getElementById("servicioReserva").value;
+    const fecha = document.getElementById("fechaReserva").value;
+    const hora = document.getElementById("horaReserva").value;
+    const mascota = document.getElementById("nombreMascota").value.trim();
+
+    if (!servicioId || !fecha || !hora || !mascota) {
+        alert("Por favor completa todos los campos de la reserva.");
+        return;
+    }
+
+    const nombreServicio = document.getElementById("resumenServicio").textContent;
+    const precioServicio = document.getElementById("resumenPrecio").textContent;
+
+    const nuevaReserva = {
+        id: crypto.randomUUID(), // ID único profesional
+        servicioId: servicioId,
+        nombreServicio: nombreServicio,
+        fecha: fecha,
+        hora: hora,
+        mascota: mascota,
+        precio: precioServicio,
+        fechaCreacion: new Date().toLocaleDateString()
+    };
+
+    // Usando la función centralizada de tu archivo storage
+    agregarReserva(nuevaReserva);
+
+    alert("¡Reserva registrada con éxito!");
+    window.location.href = "mis-reservas.html"; 
+}
+
+// Ejecutamos todo al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     cargarServicios();
     inicializarResumenServicio();
     inicializarResumenFecha();
+
+    const formReserva = document.getElementById("formReserva"); // Asegúrate que tu <form> tenga este ID
+    if (formReserva) {
+        formReserva.addEventListener("submit", guardarReserva);
+    }
 });

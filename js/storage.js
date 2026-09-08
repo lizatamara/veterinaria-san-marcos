@@ -22,3 +22,21 @@ if (!localStorage.getItem("servicios")) {
 if (!localStorage.getItem("productos")) {
     localStorage.setItem("productos", JSON.stringify(productosIniciales));
 }
+
+const CLAVE_RESERVAS = "misReservas";
+
+function obtenerReservas() {
+    const datos = localStorage.getItem(CLAVE_RESERVAS);
+    if (datos === null) return [];
+    return JSON.parse(datos);
+}
+
+function guardarReservas(reservas) {
+    localStorage.setItem(CLAVE_RESERVAS, JSON.stringify(reservas));
+}
+
+function agregarReserva(reserva) {
+    const reservas = obtenerReservas();
+    reservas.push(reserva);
+    guardarReservas(reservas);
+}
