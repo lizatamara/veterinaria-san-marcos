@@ -1,4 +1,15 @@
 function mostrarMisReservas() {
+
+    const usuarioLogueado = localStorage.getItem("usuarioLogueado")
+
+    if(!usuarioLogueado){
+        console.log("error")
+        return
+        // acá hago le sacaría el display none de la clase del div que muestra el cartel de que tiene que iniciar sesion o algo asi
+    }
+
+    const usuario = JSON.parse(usuarioLogueado);
+
     const divSinReservas = document.getElementById("estadoSinReservas");
     const divListaReservas = document.getElementById("listaReservas");
     const tablaReservasBody = document.getElementById("tablaReservasBody");
@@ -24,6 +35,10 @@ function mostrarMisReservas() {
 
     // Recorremos cada reserva para crear las filas de la tabla
     reservas.forEach(reserva => {
+
+        if(reserva.usuarioId !== usuario.id){
+            return
+        }
         const tr = document.createElement("tr");
 
         // Columna: Servicio

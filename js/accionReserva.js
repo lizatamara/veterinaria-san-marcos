@@ -39,6 +39,7 @@ function inicializarResumenServicio() {
     });
 }
 
+
 function inicializarResumenFecha() {
     // 1. Calcular la fecha de mañana en formato YYYY-MM-DD
     const hoy = new Date();
@@ -91,6 +92,7 @@ function inicializarResumenFecha() {
 function guardarReserva(evento) {
     evento.preventDefault();
 
+    const usuarioId = localStorage.getItem("usuarioLogueado")
     const servicioId = document.getElementById("servicioReserva").value;
     const fecha = document.getElementById("fechaReserva").value;
     const hora = document.getElementById("horaReserva").value;
@@ -101,11 +103,21 @@ function guardarReserva(evento) {
         return;
     }
 
+    const usuarioGuardado = localStorage.getItem("usuarioLogueado");
+
+    if (!usuarioGuardado) {
+        alert("Debes iniciar sesión para realizar una reserva.");
+        return;
+    }
+
+    const usuario = JSON.parse(usuarioGuardado);
+
     const nombreServicio = document.getElementById("resumenServicio").textContent;
     const precioServicio = document.getElementById("resumenPrecio").textContent;
 
     const nuevaReserva = {
-        id: crypto.randomUUID(), // ID único profesional
+        id: crypto.randomUUID(),
+        usuarioId: usuario.id,
         servicioId: servicioId,
         nombreServicio: nombreServicio,
         fecha: fecha,

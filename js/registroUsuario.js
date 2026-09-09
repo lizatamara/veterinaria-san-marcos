@@ -123,8 +123,8 @@ formulario.addEventListener("submit", function (evento) {
 
     const nuevoUsuario = {
         id: crypto.randomUUID(),
-        nombre: nombreRegistro,
-        apellido : apellidoRegistro,
+        nombre: nombre,
+        apellido : apellido,
         fechaNacimiento: fechaNacimiento,
         email : email,
         password : password,
