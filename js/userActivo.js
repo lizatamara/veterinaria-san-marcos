@@ -24,6 +24,7 @@ function mostrarNotificacion(mensaje, tipo = "warning") {
     toastDiv.setAttribute("aria-live", "assertive");
     toastDiv.setAttribute("aria-atomic", "true");
 
+    // sacar innerHTML por riesgo fde XSS
     toastDiv.innerHTML = `
         <div class="d-flex align-items-center p-2 bg-white rounded border border-${tipo}">
             <i class="bi ${iconoClass} fs-5 me-2 ms-1"></i>
@@ -58,20 +59,68 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnLoginNav = document.getElementById("btnLoginNav");
     const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 
+
+    // const menuUsuario = document.querySelector(".dropdown-menu");
+    const menuUsuario = btnLoginNav
+    ? btnLoginNav.parentElement.querySelector(".dropdown-menu")
+    : null;
+
+
     if (usuarioGuardado && btnLoginNav) {
 
         const usuario = JSON.parse(usuarioGuardado);
         const nombreMostrar = usuario.nombre || "Usuario";
 
-        // Cambiamos el texto del botón cuando hay una sesión iniciada
-        btnLoginNav.innerHTML = `<i class="bi bi-person-circle me-1"></i> Hola, ${nombreMostrar}`;
+        // Cambiamos el contenido del botón sin usar innerHTML
+        btnLoginNav.replaceChildren();
 
-        // Quitamos el enlace al login porque el usuario ya está logueado
+        const iconoUsuario = document.createElement("i");
+        iconoUsuario.className = "bi bi-person-circle me-1";
+
+        btnLoginNav.appendChild(iconoUsuario);
+        btnLoginNav.appendChild(document.createTextNode(`Hola, ${nombreMostrar}`));
+
+        // Quitamos el enlace al login
         btnLoginNav.removeAttribute("href");
 
-        // NUEVO: permitimos que Bootstrap abra el menú desplegable
+        // Permitimos que Bootstrap abra el menú desplegable
         btnLoginNav.setAttribute("data-bs-toggle", "dropdown");
+        btnLoginNav.classList.add("dropdown-toggle");
         btnLoginNav.style.cursor = "pointer";
+
+        // Mostramos el menú del usuario
+        if (menuUsuario) {
+            menuUsuario.classList.remove("d-none");
+        } else {
+            if (menuUsuario) {
+                menuUsuario.classList.add("d-none");
+                menuUsuario.classList.remove("show");
+            }
+        }
+
+    } else if (btnLoginNav) {
+
+        // Si NO hay usuario, mantenemos el botón como "Iniciar sesión"
+        btnLoginNav.replaceChildren();
+
+        const iconoLogin = document.createElement("i");
+        iconoLogin.className = "bi bi-person-circle me-1";
+
+        btnLoginNav.appendChild(iconoLogin);
+        btnLoginNav.appendChild(document.createTextNode("Iniciar sesión"));
+
+        // El botón vuelve a llevar al login
+        btnLoginNav.setAttribute("href", "login.html");
+
+        // NUEVO: desactivamos el dropdown
+        btnLoginNav.removeAttribute("data-bs-toggle"); 
+        btnLoginNav.classList.remove("dropdown-toggle");
+
+        // Ocultamos el menú del usuario
+        if (menuUsuario) {
+            menuUsuario.classList.add("d-none");
+        }
+
     }
 
     // Cerramos la sesión cuando el usuario hace clic en "Cerrar sesión"
@@ -83,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             localStorage.removeItem("usuarioLogueado");
 
-            // Recargamos la página para mostrar nuevamente "Iniciar sesión"
             window.location.reload();
         });
     }

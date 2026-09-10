@@ -36,9 +36,9 @@ if (formularioLogin) {
                 mensajeExito.textContent = textoExito;
                 mensajeExito.classList.remove("d-none");
             }
-            if (typeof mostrarNotificacion === "function") {
-                mostrarNotificacion(textoExito, "success");
-            }
+     //       if (typeof mostrarNotificacion === "function") {
+    //            mostrarNotificacion(textoExito, "success");
+    //        }
 
             localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioEncontrado));
 
