@@ -1,27 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Buscamos si hay un usuario logueado en el localStorage
+
+    // Buscamos si hay un usuario logueado en el localStorage
     const usuarioGuardado = localStorage.getItem("usuarioLogueado");
     const btnLoginNav = document.getElementById("btnLoginNav");
+    const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 
     if (usuarioGuardado && btnLoginNav) {
-        const usuario = JSON.parse(usuarioGuardado);
 
+        const usuario = JSON.parse(usuarioGuardado);
         const nombreMostrar = usuario.nombre || "Usuario";
 
-        btnLoginNav.textContent = `Hola, ${nombreMostrar}`;
+        // Cambiamos el texto del botón cuando hay una sesión iniciada
+        btnLoginNav.innerHTML = `<i class="bi bi-person-circle me-1"></i> Hola, ${nombreMostrar}`;
 
-        // Como ya está logueado, le quitamos el enlace para que no redirija al login al hacerle clic
+        // Quitamos el enlace al login porque el usuario ya está logueado
         btnLoginNav.removeAttribute("href");
-    
 
-        btnLoginNav.style.cursor = "default";
-    
+        // NUEVO: permitimos que Bootstrap abra el menú desplegable
+        btnLoginNav.setAttribute("data-bs-toggle", "dropdown");
+        btnLoginNav.style.cursor = "pointer";
     }
 
-        // 3. Opcional: Agregar funcionalidad para cerrar sesión
-        /*  document.getElementById("btnCerrarSesion").addEventListener("click", function () {
-            localStorage.removeItem("usuarioLogueado"); // Borramos la sesión
-            window.location.reload(); // Recargamos para que vuelva a aparecer el botón de login
-        }); */
+    // Cerramos la sesión cuando el usuario hace clic en "Cerrar sesión"
+    if (btnCerrarSesion) {
+
+        btnCerrarSesion.addEventListener("click", function (evento) {
+
+            evento.preventDefault();
+
+            localStorage.removeItem("usuarioLogueado");
+
+            // Recargamos la página para mostrar nuevamente "Iniciar sesión"
+            window.location.reload();
+        });
     }
-);
+});

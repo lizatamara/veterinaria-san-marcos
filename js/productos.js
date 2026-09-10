@@ -129,15 +129,61 @@ function crearCardProducto(producto) {
     btnDetalle.id = `btnDetalle-${producto.id.toLowerCase()}`;
     btnDetalle.textContent = "Ver detalles";
 
-    const btnAgregarCarrito = document.createElement("a");
+    // CAMBIO: ahora es un botón y no un enlace a reservar.html
+    const btnAgregarCarrito = document.createElement("button");
     btnAgregarCarrito.className = "btn btn-primary";
-    btnAgregarCarrito.href = `reservar.html?producto=${producto.id}`;
+    btnAgregarCarrito.type = "button";
     btnAgregarCarrito.id = `btnAgregarCarrito-${producto.id.toLowerCase()}`;
     btnAgregarCarrito.setAttribute("aria-label", `Agregar ${producto.nombre}`);
 
     const icon = document.createElement("i");
     icon.className = "bi bi-cart-plus";
     btnAgregarCarrito.appendChild(icon);
+
+    // NUEVO: agregar el producto al carrito
+    btnAgregarCarrito.addEventListener("click", () => {
+
+        if (producto.stock <= 0) {
+            alert("Este producto no tiene stock disponible.");
+            return;
+        }
+
+        let carrito = obtenerCarrito();
+
+        const index = carrito.findIndex(item => item.id === producto.id);
+
+        if (index > -1) {
+
+            if (carrito[index].cantidad + 1 <= producto.stock) {
+                carrito[index].cantidad += 1;
+            } else {
+                alert("La cantidad total supera el stock disponible.");
+                return;
+            }
+
+        } else {
+
+            carrito.push({
+                id: producto.id,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                stock: producto.stock,
+                cantidad: 1
+            });
+
+        }
+
+        guardarCarrito(carrito);
+        dispararAnimacionCarrito();
+
+        // NUEVO: abrir el offcanvas igual que en detalle-producto.html
+        const offcanvasEl = document.getElementById("offcanvasCarrito");
+
+        if (offcanvasEl && typeof bootstrap !== "undefined") {
+            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+            bsOffcanvas.show();
+        }
+    });
 
     btnContainer.appendChild(btnDetalle);
     btnContainer.appendChild(btnAgregarCarrito);
