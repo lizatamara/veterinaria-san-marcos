@@ -167,7 +167,11 @@ function inicializarResumenFecha() {
             const fechaSeleccionada = e.target.value;
 
             if (fechaSeleccionada < fechaMinima) {
-                alert("Las reservas deben hacerse a partir del día de mañana.");
+                if (typeof mostrarNotificacion === "function") {
+                    mostrarNotificacion("Las reservas deben hacerse a partir del día de mañana.", "warning");
+                } else {
+                    alert("Las reservas deben hacerse a partir del día de mañana.");
+                }
                 e.target.value = "";
                 if (resumenFecha) resumenFecha.textContent = "No seleccionada";
             } else {
@@ -199,13 +203,24 @@ function guardarReserva(evento) {
     const mascota = document.getElementById("nombreMascota").value.trim();
 
     if (!servicioId || !fecha || !hora || !mascota) {
-        alert("Por favor completa todos los campos de la reserva.");
+        if (typeof mostrarNotificacion === "function") {
+            mostrarNotificacion("Por favor completa todos los campos de la reserva.", "warning");
+        } else {
+            alert("Por favor completa todos los campos de la reserva.");
+        }
         return;
     }
 
     const usuarioGuardado = localStorage.getItem("usuarioLogueado");
     if (!usuarioGuardado) {
-        alert("Debes iniciar sesión para realizar una reserva.");
+        if (typeof mostrarNotificacion === "function") {
+            mostrarNotificacion("Debes iniciar sesión para realizar una reserva.", "danger");
+        } else {
+            alert("Debes iniciar sesión para realizar una reserva.");
+        }
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1200);
         return;
     }
 
@@ -233,8 +248,14 @@ function guardarReserva(evento) {
     console.log("[DEBUG] Guardando nueva reserva:", nuevaReserva);
     agregarReserva(nuevaReserva);
 
-    alert("¡Reserva registrada con éxito!");
-    window.location.href = "mis-reservas.html"; 
+    if (typeof mostrarNotificacion === "function") {
+        mostrarNotificacion("¡Reserva registrada con éxito! Redirigiendo...", "success");
+    } else {
+        alert("¡Reserva registrada con éxito!");
+    }
+    setTimeout(() => {
+        window.location.href = "mis-reservas.html";
+    }, 1200);
 }
 
 // Inicialización general limpia

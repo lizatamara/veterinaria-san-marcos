@@ -144,7 +144,11 @@ function crearCardProducto(producto) {
     btnAgregarCarrito.addEventListener("click", () => {
 
         if (producto.stock <= 0) {
-            alert("Este producto no tiene stock disponible.");
+            if (typeof mostrarNotificacion === "function") {
+                mostrarNotificacion("Este producto no tiene stock disponible.", "warning");
+            } else {
+                alert("Este producto no tiene stock disponible.");
+            }
             return;
         }
 
@@ -157,7 +161,11 @@ function crearCardProducto(producto) {
             if (carrito[index].cantidad + 1 <= producto.stock) {
                 carrito[index].cantidad += 1;
             } else {
-                alert("La cantidad total supera el stock disponible.");
+                if (typeof mostrarNotificacion === "function") {
+                    mostrarNotificacion("La cantidad total supera el stock disponible.", "warning");
+                } else {
+                    alert("La cantidad total supera el stock disponible.");
+                }
                 return;
             }
 

@@ -1,39 +1,58 @@
 console.log("¡El archivo login.js está conectado y funcionando!");
 
-const usuarios = obtenerUsuarios();
-console.log("Usuarios leídos del localStorage:", usuarios); // ¿Muestra la lista o sale vacío []?
-
 const formularioLogin = document.getElementById("formLogin");
+const mensajeError = document.getElementById("mensajeErrorLogin");
+const mensajeExito = document.getElementById("mensajeExitoLogin");
 
-formularioLogin.addEventListener("submit", function (evento) {
-    evento.preventDefault();
+if (formularioLogin) {
+    formularioLogin.addEventListener("submit", function (evento) {
+        evento.preventDefault();
 
-    const emailIngresado = document.getElementById("loginEmail").value.trim();
-    const passwordIngresado = document.getElementById("loginPassword").value;
+        if (mensajeError) mensajeError.classList.add("d-none");
+        if (mensajeExito) mensajeExito.classList.add("d-none");
 
-    if (!emailIngresado || !passwordIngresado) {
-        console.log("Por favor, completa todos los campos.");
-        return;
-    }
+        const emailIngresado = document.getElementById("loginEmail").value.trim();
+        const passwordIngresado = document.getElementById("loginPassword").value;
 
-    // 3. Obtener los usuarios guardados en el localStorage
-    const usuarios = obtenerUsuarios();
+        if (!emailIngresado || !passwordIngresado) {
+            const texto = "Por favor, completa todos los campos requeridos.";
+            if (mensajeError) {
+                mensajeError.textContent = texto;
+                mensajeError.classList.remove("d-none");
+            } else if (typeof mostrarNotificacion === "function") {
+                mostrarNotificacion(texto, "warning");
+            }
+            return;
+        }
 
-    // 4. Buscar si existe un usuario que coincida en correo y contraseña
-    const usuarioEncontrado = usuarios.find(
-        usuario => usuario.email === emailIngresado && usuario.password === passwordIngresado
-    );
+        const usuarios = typeof obtenerUsuarios === "function" ? obtenerUsuarios() : (JSON.parse(localStorage.getItem("sanmarcos_usuarios")) || []);
+        const usuarioEncontrado = usuarios.find(
+            usuario => usuario.email === emailIngresado && usuario.password === passwordIngresado
+        );
 
-    // 5. Validar el resultado
-    if (usuarioEncontrado) {
-        console.log(`¡Bienvenido de nuevo, ${usuarioEncontrado.nombre}!`);
-        
-        // Opcional: Guardar el usuario actual en una sesión activa si lo necesitas después
-        localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioEncontrado));
+        if (usuarioEncontrado) {
+            const textoExito = `¡Bienvenido de nuevo, ${usuarioEncontrado.nombre}!`;
+            if (mensajeExito) {
+                mensajeExito.textContent = textoExito;
+                mensajeExito.classList.remove("d-none");
+            }
+            if (typeof mostrarNotificacion === "function") {
+                mostrarNotificacion(textoExito, "success");
+            }
 
-        // Redirigir a la página principal o de bienvenida de la veterinaria
-        window.location.href = "../index.html";
-    } else {
-        console.log("Correo o contraseña incorrectos. Por favor, verifica tus datos.");
-    }
-});
+            localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioEncontrado));
+
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 1200);
+        } else {
+            const textoError = "Correo o contraseña incorrectos. Por favor, verifica tus datos.";
+            if (mensajeError) {
+                mensajeError.textContent = textoError;
+                mensajeError.classList.remove("d-none");
+            } else if (typeof mostrarNotificacion === "function") {
+                mostrarNotificacion(textoError, "danger");
+            }
+        }
+    });
+}

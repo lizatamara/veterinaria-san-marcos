@@ -252,7 +252,11 @@ function configurarBotonDetalle() {
             if ((carrito[index].cantidad + cantidadPedida) <= producto.stock) {
                 carrito[index].cantidad += cantidadPedida;
             } else {
-                alert("La cantidad total supera el stock disponible.");
+                if (typeof mostrarNotificacion === "function") {
+                    mostrarNotificacion("La cantidad total supera el stock disponible.", "warning");
+                } else {
+                    alert("La cantidad total supera el stock disponible.");
+                }
                 return;
             }
         } else {
@@ -319,7 +323,11 @@ function modificarCantidad(id, cambio) {
             item.cantidad = nuevaCantidad;
             guardarCarrito(carrito);
         } else if (nuevaCantidad > prodOriginal.stock) {
-            alert("Has alcanzado el límite de stock disponible.");
+            if (typeof mostrarNotificacion === "function") {
+                mostrarNotificacion("Has alcanzado el límite de stock disponible.", "warning");
+            } else {
+                alert("Has alcanzado el límite de stock disponible.");
+            }
         }
     }
 }
@@ -333,14 +341,24 @@ function eliminarItemCarrito(id) {
 function finalizarCompra() {
     const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
     if (!usuarioLogueado) {
-        alert("Debes iniciar sesión para finalizar tu compra.");
-        window.location.href = "login.html";
+        if (typeof mostrarNotificacion === "function") {
+            mostrarNotificacion("Debes iniciar sesión para finalizar tu compra.", "danger");
+        } else {
+            alert("Debes iniciar sesión para finalizar tu compra.");
+        }
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 1200);
         return;
     }
 
     const carrito = obtenerCarrito();
     if (carrito.length === 0) {
-        alert("Tu carrito está vacío.");
+        if (typeof mostrarNotificacion === "function") {
+            mostrarNotificacion("Tu carrito está vacío.", "warning");
+        } else {
+            alert("Tu carrito está vacío.");
+        }
         return;
     }
 
