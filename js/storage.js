@@ -40,3 +40,7 @@ function agregarReserva(reserva) {
     reservas.push(reserva);
     guardarReservas(reservas);
 }
+
+if (!localStorage.getItem("configAgenda")) {
+    localStorage.setItem("configAgenda", JSON.stringify(configuracionAgenda));
+}

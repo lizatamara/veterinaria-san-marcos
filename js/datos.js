@@ -256,7 +256,7 @@ const serviciosIniciales = [
         categoria: "Consultas",
         nombre: "Consulta general",
         especie: "Perro / Gato",
-        duracion: "30 min",
+        duracion: 30,
         precio: 15000,
         observaciones: ""
     },
@@ -266,7 +266,7 @@ const serviciosIniciales = [
         categoria: "Consultas",
         nombre: "Consulta urgencia",
         especie: "Perro / Gato",
-        duracion: "30 min",
+        duracion: 30,
         precio: 25000,
         observaciones: "Fuera de horario +$10.000"
     },
@@ -276,7 +276,7 @@ const serviciosIniciales = [
         categoria: "Consultas",
         nombre: "Control postoperatorio",
         especie: "Perro / Gato",
-        duracion: "20 min",
+        duracion: 20,
         precio: 10000,
         observaciones: ""
     },
@@ -286,7 +286,7 @@ const serviciosIniciales = [
         categoria: "Consultas",
         nombre: "Consulta ave / conejo",
         especie: "Ave / Conejo",
-        duracion: "30 min",
+        duracion: 30,
         precio: 18000,
         observaciones: ""
     },
@@ -296,7 +296,7 @@ const serviciosIniciales = [
         categoria: "Consultas",
         nombre: "Segunda opinión médica",
         especie: "Todas",
-        duracion: "40 min",
+        duracion: 40,
         precio: 20000,
         observaciones: "Requiere ficha previa"
     },
@@ -306,7 +306,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna antirrábica canina",
         especie: "Perro",
-        duracion: "10 min",
+        duracion: 10,
         precio: 12000,
         observaciones: "Obligatoria por ley"
     },
@@ -316,7 +316,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna sextuple canina",
         especie: "Perro",
-        duracion: "10 min",
+        duracion: 10,
         precio: 18000,
         observaciones: "Refuerzo anual"
     },
@@ -326,7 +326,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna bivalente felina",
         especie: "Gato",
-        duracion: "10 min",
+        duracion: 10,
         precio: 15000,
         observaciones: "Refuerzo anual"
     },
@@ -336,7 +336,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna triple felina",
         especie: "Gato",
-        duracion: "10 min",
+        duracion: 10,
         precio: 17000,
         observaciones: "Refuerzo anual"
     },
@@ -346,7 +346,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna Bordetella canina",
         especie: "Perro",
-        duracion: "10 min",
+        duracion: 10,
         precio: 14000,
         observaciones: "Tos de las perreras"
     },
@@ -356,7 +356,7 @@ const serviciosIniciales = [
         categoria: "Vacunación",
         nombre: "Vacuna antirrábica felina",
         especie: "Gato",
-        duracion: "10 min",
+        duracion: 10,
         precio: 12000,
         observaciones: ""
     },
@@ -366,7 +366,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Esterilización hembra canina",
         especie: "Perra",
-        duracion: "90 min",
+        duracion: 90,
         precio: 80000,
         observaciones: "Incluye anestesia y hospitalización 24h"
     },
@@ -376,7 +376,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Esterilización macho canino",
         especie: "Perro",
-        duracion: "60 min",
+        duracion: 60,
         precio: 60000,
         observaciones: "Incluye anestesia"
     },
@@ -386,7 +386,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Esterilización hembra felina",
         especie: "Gata",
-        duracion: "60 min",
+        duracion: 60,
         precio: 65000,
         observaciones: "Incluye anestesia y hospitalización 12h"
     },
@@ -396,7 +396,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Esterilización macho felino",
         especie: "Gato",
-        duracion: "45 min",
+        duracion: 45,
         precio: 50000,
         observaciones: "Incluye anestesia"
     },
@@ -406,7 +406,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Extirpación de tumor cutáneo",
         especie: "Perro / Gato",
-        duracion: "60 min",
+        duracion: 60,
         precio: 120000,
         observaciones: "Precio referencial; varía según tamaño"
     },
@@ -416,7 +416,7 @@ const serviciosIniciales = [
         categoria: "Cirugía",
         nombre: "Cesárea de urgencia",
         especie: "Perra / Gata",
-        duracion: "120 min",
+        duracion: 120,
         precio: 180000,
         observaciones: ""
     },
@@ -426,7 +426,7 @@ const serviciosIniciales = [
         categoria: "Desparasitación",
         nombre: "Desparasitación interna pequeños (<10 kg)",
         especie: "Perro",
-        duracion: "5 min",
+        duracion: 5,
         precio: 8000,
         observaciones: ""
     },
@@ -436,7 +436,7 @@ const serviciosIniciales = [
         categoria: "Desparasitación",
         nombre: "Desparasitación interna medianos (10-25 kg)",
         especie: "Perro",
-        duracion: "5 min",
+        duracion: 5,
         precio: 9500,
         observaciones: ""
     },
@@ -446,7 +446,7 @@ const serviciosIniciales = [
         categoria: "Desparasitación",
         nombre: "Desparasitación interna grandes (>25 kg)",
         especie: "Perro",
-        duracion: "5 min",
+        duracion: 5,
         precio: 11000,
         observaciones: ""
     },
@@ -456,7 +456,7 @@ const serviciosIniciales = [
         categoria: "Desparasitación",
         nombre: "Desparasitación interna felina",
         especie: "Gato",
-        duracion: "5 min",
+        duracion: 5,
         precio: 8000,
         observaciones: ""
     },
@@ -466,7 +466,7 @@ const serviciosIniciales = [
         categoria: "Desparasitación",
         nombre: "Antiparasitario externo (pipeta)",
         especie: "Perro / Gato",
-        duracion: "5 min",
+        duracion: 5,
         precio: 7500,
         observaciones: "Incluye aplicación"
     },
@@ -476,7 +476,7 @@ const serviciosIniciales = [
         categoria: "Exámenes",
         nombre: "Hemograma completo",
         especie: "Perro / Gato",
-        duracion: "30 min",
+        duracion: 30,
         precio: 22000,
         observaciones: "Resultado en 24-48 h"
     },
@@ -486,7 +486,7 @@ const serviciosIniciales = [
         categoria: "Exámenes",
         nombre: "Perfil bioquímico completo",
         especie: "Perro / Gato",
-        duracion: "30 min",
+        duracion: 30,
         precio: 35000,
         observaciones: "Resultado en 24-48 h"
     },
@@ -496,7 +496,7 @@ const serviciosIniciales = [
         categoria: "Exámenes",
         nombre: "Radiografía (1 proyección)",
         especie: "Perro / Gato",
-        duracion: "20 min",
+        duracion: 20,
         precio: 28000,
         observaciones: ""
     },
@@ -506,7 +506,7 @@ const serviciosIniciales = [
         categoria: "Exámenes",
         nombre: "Ecografía abdominal",
         especie: "Perro / Gato",
-        duracion: "30 min",
+        duracion: 30,
         precio: 45000,
         observaciones: ""
     },
@@ -516,7 +516,7 @@ const serviciosIniciales = [
         categoria: "Exámenes",
         nombre: "Test de leishmaniasis",
         especie: "Perro",
-        duracion: "20 min",
+        duracion: 20,
         precio: 18000,
         observaciones: ""
     },
@@ -526,7 +526,7 @@ const serviciosIniciales = [
         categoria: "Otros",
         nombre: "Corte de uñas",
         especie: "Perro / Gato",
-        duracion: "15 min",
+        duracion: 15,
         precio: 5000,
         observaciones: ""
     },
@@ -536,7 +536,7 @@ const serviciosIniciales = [
         categoria: "Otros",
         nombre: "Limpieza dental",
         especie: "Perro / Gato",
-        duracion: "45 min",
+        duracion: 45,
         precio: 55000,
         observaciones: "Requiere anestesia"
     },
@@ -546,7 +546,7 @@ const serviciosIniciales = [
         categoria: "Otros",
         nombre: "Microchip identificación",
         especie: "Perro / Gato",
-        duracion: "10 min",
+        duracion: 10,
         precio: 15000,
         observaciones: "Incluye registro"
     },
@@ -581,3 +581,9 @@ const regionesChile = [
     "Aysén",
     "Magallanes"
 ];
+
+const configuracionAgenda = {
+    horaApertura: "09:00",
+    horaCierre: "18:00",
+    duracionBloqueMinutos: 30
+};
