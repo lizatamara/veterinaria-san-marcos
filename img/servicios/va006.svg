@@ -1,7 +1,89 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
-  <rect width="900" height="600" fill="#eaf5f2"/>
-  <circle cx="450" cy="240" r="105" fill="#2f7d74" opacity=".12"/>
-  <text x="450" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" fill="#2f7d74">♥</text>
-  <text x="450" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#245f58">Vacuna antirrábica felina</text>
-  <text x="450" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#66757d">Veterinaria San Marcos</text>
+  <defs>
+    <!-- Background Gradient: Rosa viejo pastel cálido -->
+    <linearGradient id="servBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#fdf6f7"/>
+      <stop offset="100%" stop-color="#f7eaed"/>
+    </linearGradient>
+    <filter id="servShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#733b47" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="600" fill="url(#servBgGrad)"/>
+
+  <!-- Left Side: Procedural Info Card -->
+  <g transform="translate(60, 90)" filter="url(#servShadow)">
+    <rect x="0" y="0" width="390" height="420" rx="20" fill="#ffffff" stroke="#ecdfe2" stroke-width="2"/>
+    
+    <!-- Top Header Ribbon -->
+    <path d="M 0,20 Q 0,0 20,0 L 370,0 Q 390,0 390,20 L 390,85 L 0,85 Z" fill="#b36b77"/>
+    
+    <g transform="translate(30, 24)">
+      <circle cx="18" cy="18" r="18" fill="#ffffff" opacity="0.2"/>
+      <path d="M18,9 L18,27 M9,18 L27,18" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <text x="75" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#ffffff" letter-spacing="2">PROCEDIMIENTO CLÍNICO</text>
+    <text x="75" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#faeaed" letter-spacing="1">VACUNACIÓN</text>
+
+    <!-- Procedure Name -->
+    <text x="35" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#2e2528">Vacuna antirrábica felin</text>
+    <text x="35" y="172" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#2e2528">a</text>
+
+    <!-- Badges -->
+    <g transform="translate(35, 220)">
+      <rect x="0" y="0" width="150" height="46" rx="10" fill="#fcf2f4" stroke="#ecdce0" stroke-width="1"/>
+      <text x="16" y="19" font-family="'Segoe UI', sans-serif" font-size="10" fill="#786b6f">ESPECIE</text>
+      <text x="16" y="35" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e2528">Gato</text>
+
+      <rect x="165" y="0" width="150" height="46" rx="10" fill="#fcf2f4" stroke="#ecdce0" stroke-width="1"/>
+      <text x="181" y="19" font-family="'Segoe UI', sans-serif" font-size="10" fill="#786b6f">DURACIÓN EST.</text>
+      <text x="181" y="35" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e2528">10 minutos</text>
+    </g>
+
+    <!-- Guarantee badge -->
+    <g transform="translate(35, 310)">
+      <rect x="0" y="0" width="320" height="60" rx="12" fill="#faf5f6" stroke="#ebd8dc" stroke-width="1.5"/>
+      <circle cx="35" cy="30" r="16" fill="#b36b77"/>
+      <path d="M28,30 L33,35 L42,25" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+      <text x="65" y="27" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#2e2528">Atención Profesional Certificada</text>
+      <text x="65" y="44" font-family="'Segoe UI', sans-serif" font-size="11" fill="#786b6f">Veterinaria San Marcos</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Service Drawing -->
+  
+        <!-- Drawing: Jeringa de Vacunación y Escudo de Protección -->
+        <g transform="translate(480, 90)">
+          <!-- Shield Backdrop -->
+          <path d="M 160,20 C 260,20 280,70 280,170 C 280,270 160,340 160,340 C 160,340 40,270 40,170 C 40,70 60,20 160,20 Z" fill="#fcf2f4" stroke="#ebd5da" stroke-width="4"/>
+          
+          <!-- Syringe (Hand-drawn angle) -->
+          <g transform="translate(80, 60) rotate(35, 100, 100)">
+            <!-- Needle -->
+            <line x1="100" y1="20" x2="100" y2="70" stroke="#786b6f" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="100" cy="12" r="5" fill="#b36b77"/>
+            
+            <!-- Barrel -->
+            <rect x="75" y="70" width="50" height="130" rx="8" fill="#ffffff" stroke="#3d2b2f" stroke-width="5"/>
+            <!-- Liquid inside syringe -->
+            <rect x="80" y="110" width="40" height="85" rx="4" fill="#b36b77" opacity="0.75"/>
+            <!-- Measurement lines -->
+            <line x1="80" y1="95" x2="95" y2="95" stroke="#3d2b2f" stroke-width="3"/>
+            <line x1="80" y1="120" x2="105" y2="120" stroke="#3d2b2f" stroke-width="3"/>
+            <line x1="80" y1="145" x2="95" y2="145" stroke="#3d2b2f" stroke-width="3"/>
+            <line x1="80" y1="170" x2="105" y2="170" stroke="#3d2b2f" stroke-width="3"/>
+            
+            <!-- Plunger Shaft -->
+            <rect x="94" y="200" width="12" height="60" fill="#e8d5d9" stroke="#3d2b2f" stroke-width="4"/>
+            <rect x="70" y="260" width="60" height="14" rx="4" fill="#8c4b56" stroke="#3d2b2f" stroke-width="4"/>
+          </g>
+          
+          <!-- Vaccine Drops -->
+          <path d="M 230,60 C 230,75 215,85 215,85 C 215,85 200,75 200,60 C 200,48 215,40 215,40 C 215,40 230,48 230,60 Z" fill="#b36b77" stroke="#3d2b2f" stroke-width="3"/>
+        </g>
+        
 </svg>

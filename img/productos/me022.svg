@@ -1,7 +1,146 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
-  <rect width="900" height="600" fill="#eaf5f2"/>
-  <circle cx="450" cy="240" r="105" fill="#2f7d74" opacity=".12"/>
-  <text x="450" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" fill="#2f7d74">✚</text>
-  <text x="450" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#245f58">Condrovet forte</text>
-  <text x="450" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#66757d">Veterinaria San Marcos</text>
+  <defs>
+    <!-- Background Gradient: Rosa viejo pastel cálido -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#fdf6f7"/>
+      <stop offset="100%" stop-color="#f5e6e9"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#733b47" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative ambient pattern -->
+  <circle cx="820" cy="80" r="180" fill="#b36b77" opacity="0.04"/>
+  <circle cx="100" cy="520" r="140" fill="#b36b77" opacity="0.03"/>
+
+  <!-- Left Side: Realistic Product Box & Clinical Info Card -->
+  <g transform="translate(60, 90)" filter="url(#cardShadow)">
+    <!-- Box Body -->
+    <rect x="0" y="0" width="400" height="420" rx="20" fill="#ffffff" stroke="#ecdfe2" stroke-width="2"/>
+    
+    <!-- Top Brand Header Ribbon -->
+    <path d="M 0,20 Q 0,0 20,0 L 380,0 Q 400,0 400,20 L 400,85 L 0,85 Z" fill="#b36b77"/>
+    
+    <!-- Veterinary Cross Icon -->
+    <g transform="translate(30, 24)">
+      <circle cx="18" cy="18" r="18" fill="#ffffff" opacity="0.2"/>
+      <path d="M18,9 L18,27 M9,18 L27,18" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <text x="75" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#ffffff" letter-spacing="2">VETERINARIA SAN MARCOS</text>
+    <text x="75" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#faeaed" letter-spacing="1">USO VETERINARIO</text>
+
+    <!-- Product Title -->
+    <text x="35" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#2e2528">Condrovet forte</text>
+    
+    <!-- Active Ingredient -->
+    <rect x="35" y="168" width="330" height="34" rx="8" fill="#fcf2f4"/>
+    <text x="50" y="190" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#b36b77">Principio activo: Condroitín+Glucos.</text>
+
+    <!-- Specs Pill Badges -->
+    <g transform="translate(35, 225)">
+      <!-- Species Badge -->
+      <rect x="0" y="0" width="155" height="44" rx="10" fill="#faf4f5" stroke="#ecdce0" stroke-width="1"/>
+      <text x="16" y="18" font-family="'Segoe UI', sans-serif" font-size="10" fill="#786b6f">ESPECIE</text>
+      <text x="16" y="34" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e2528">Perro</text>
+      
+      <!-- Presentation Badge -->
+      <rect x="170" y="0" width="160" height="44" rx="10" fill="#faf4f5" stroke="#ecdce0" stroke-width="1"/>
+      <text x="186" y="18" font-family="'Segoe UI', sans-serif" font-size="10" fill="#786b6f">PRESENTACIÓN</text>
+      <text x="186" y="34" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#2e2528">Blíster 30 comp.</text>
+    </g>
+
+    <!-- Clinical Barcode & SKU -->
+    <g transform="translate(35, 305)">
+      <!-- Barcode bars -->
+      <rect x="0" y="10" width="4" height="42" fill="#4a3e41"/>
+      <rect x="7" y="10" width="2" height="42" fill="#4a3e41"/>
+      <rect x="13" y="10" width="5" height="42" fill="#4a3e41"/>
+      <rect x="22" y="10" width="2" height="42" fill="#4a3e41"/>
+      <rect x="28" y="10" width="6" height="42" fill="#4a3e41"/>
+      <rect x="38" y="10" width="3" height="42" fill="#4a3e41"/>
+      <rect x="45" y="10" width="7" height="42" fill="#4a3e41"/>
+      <rect x="56" y="10" width="2" height="42" fill="#4a3e41"/>
+      <rect x="62" y="10" width="4" height="42" fill="#4a3e41"/>
+      <rect x="70" y="10" width="5" height="42" fill="#4a3e41"/>
+      <rect x="79" y="10" width="2" height="42" fill="#4a3e41"/>
+      <rect x="85" y="10" width="6" height="42" fill="#4a3e41"/>
+      <text x="45" y="65" text-anchor="middle" font-family="monospace" font-size="10" fill="#786b6f">REF: ME022</text>
+      
+      <!-- Seal of Quality Stamp -->
+      <circle cx="270" cy="32" r="30" fill="none" stroke="#b36b77" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="270" y="28" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="800" fill="#b36b77">CALIDAD</text>
+      <text x="270" y="40" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="800" fill="#b36b77">GARANTIZADA</text>
+    </g>
+  </g>
+
+  <!-- Right Side: 3D Object Render -->
+  
+        <!-- Realistic 3D Blister Pack -->
+        <g transform="translate(470, 90)">
+          <!-- Foil Shadow -->
+          <polygon points="50,370 270,390 250,420 30,395" fill="#6e3d46" opacity="0.22" filter="blur(6px)"/>
+          
+          <!-- Blister Card (Metallic Aluminum Foil look) -->
+          <defs>
+            <linearGradient id="foilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f8fafc"/>
+              <stop offset="25%" stop-color="#e2e8f0"/>
+              <stop offset="50%" stop-color="#ffffff"/>
+              <stop offset="75%" stop-color="#cbd5e1"/>
+              <stop offset="100%" stop-color="#94a3b8"/>
+            </linearGradient>
+            <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#b36b77"/>
+              <stop offset="50%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#8c4b56"/>
+            </linearGradient>
+          </defs>
+          
+          <rect x="40" y="50" width="220" height="330" rx="14" fill="url(#foilGrad)" stroke="#94a3b8" stroke-width="2"/>
+          
+          <!-- Metallic grid lines on blister -->
+          <line x1="40" y1="116" x2="260" y2="116" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1"/>
+          <line x1="40" y1="182" x2="260" y2="182" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1"/>
+          <line x1="40" y1="248" x2="260" y2="248" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1"/>
+          <line x1="40" y1="314" x2="260" y2="314" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1"/>
+          <line x1="150" y1="50" x2="150" y2="380" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1"/>
+          
+          <!-- 10 Transparent Blister Domes with Pills -->
+          <!-- Row 1 -->
+          <ellipse cx="95" cy="83" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="75" y="73" width="40" height="20" rx="10" fill="#b36b77"/>
+          <ellipse cx="205" cy="83" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="185" y="73" width="40" height="20" rx="10" fill="#b36b77"/>
+          
+          <!-- Row 2 -->
+          <ellipse cx="95" cy="149" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="75" y="139" width="40" height="20" rx="10" fill="#b36b77"/>
+          <ellipse cx="205" cy="149" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="185" y="139" width="40" height="20" rx="10" fill="#b36b77"/>
+          
+          <!-- Row 3 -->
+          <ellipse cx="95" cy="215" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="75" y="205" width="40" height="20" rx="10" fill="#b36b77"/>
+          <ellipse cx="205" cy="215" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="185" y="205" width="40" height="20" rx="10" fill="#b36b77"/>
+          
+          <!-- Row 4 -->
+          <ellipse cx="95" cy="281" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="75" y="271" width="40" height="20" rx="10" fill="#b36b77"/>
+          <ellipse cx="205" cy="281" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="185" y="271" width="40" height="20" rx="10" fill="#b36b77"/>
+          
+          <!-- Row 5 -->
+          <ellipse cx="95" cy="347" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="75" y="337" width="40" height="20" rx="10" fill="#b36b77"/>
+          <ellipse cx="205" cy="347" rx="36" ry="22" fill="#ffffff" opacity="0.85" stroke="#cbd5e1" stroke-width="1.5"/>
+          <rect x="185" y="337" width="40" height="20" rx="10" fill="#b36b77"/>
+        </g>
+        
 </svg>

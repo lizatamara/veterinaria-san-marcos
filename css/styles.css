@@ -1,13 +1,13 @@
 :root {
-  --brand: #2f7d74;
-  --brand-dark: #245f58;
-  --brand-soft: #eaf5f2;
-  --ink: #24333a;
-  --muted: #66757d;
+  --brand: #b36b77;
+  --brand-dark: #8c4b56;
+  --brand-soft: #fcf2f4;
+  --ink: #2e2528;
+  --muted: #786b6f;
   --surface: #ffffff;
-  --soft: #f5f9f8;
-  --border: #dce8e5;
-  --shadow: 0 12px 35px rgba(32, 70, 66, 0.09);
+  --soft: #faf5f6;
+  --border: #ece1e3;
+  --shadow: 0 12px 35px rgba(92, 45, 54, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -60,14 +60,14 @@ a:hover { color: var(--brand-dark); }
 
 .hero-section {
   background:
-    radial-gradient(circle at 90% 20%, rgba(47,125,116,.14), transparent 32%),
-    linear-gradient(135deg, #f4fbf9 0%, #fff 60%);
+    radial-gradient(circle at 90% 20%, rgba(179,107,119,.15), transparent 35%),
+    linear-gradient(135deg, #fdf8f9 0%, #fff 60%);
 }
 
 .hero-card {
   min-height: 310px;
   border-radius: 28px;
-  background: var(--brand);
+  background: linear-gradient(145deg, #b36b77 0%, #9e5a66 100%);
   color: #fff;
   padding: 3rem;
   display: flex;
@@ -199,8 +199,8 @@ a:hover { color: var(--brand-dark); }
   display: grid;
   place-items: center;
   background:
-    linear-gradient(rgba(234,245,242,.92), rgba(234,245,242,.92)),
-    repeating-linear-gradient(45deg, #d8eae6 0, #d8eae6 2px, transparent 2px, transparent 12px);
+    linear-gradient(rgba(252,242,244,.92), rgba(252,242,244,.92)),
+    repeating-linear-gradient(45deg, #ebd8dc 0, #ebd8dc 2px, transparent 2px, transparent 12px);
   border: 1px solid var(--border);
   border-radius: 18px;
   color: var(--brand-dark);
@@ -217,12 +217,12 @@ a:hover { color: var(--brand-dark); }
 .empty-state > i { font-size: 3rem; color: var(--brand); }
 
 .site-footer {
-  background: #203d3a;
-  color: #eaf5f2;
+  background: #362226;
+  color: #fcecef;
 }
 
-.site-footer .footer-links a { color: #d9efeb; text-decoration: none; }
-.site-footer .footer-links a:hover { text-decoration: underline; }
+.site-footer .footer-links a { color: #edd2d6; text-decoration: none; }
+.site-footer .footer-links a:hover { color: #ffffff; text-decoration: underline; }
 
 .auth-page { background: var(--soft); }
 .auth-card { max-width: 500px; padding: 2rem; }
