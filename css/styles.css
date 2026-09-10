@@ -263,3 +263,8 @@ a:hover { color: var(--brand-dark); }
   .detail-image { min-height: 280px; }
   .auth-card { padding: 1.25rem; }
 }
+
+.scale-up {
+    transform: scale(1.3);
+    transition: transform 0.2s ease-in-out;
+}

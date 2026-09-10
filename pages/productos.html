@@ -116,5 +116,33 @@
         </div>
     </footer>
     <script src="../js/script.js"></script>
+
+    <!-- Panel Lateral del Carrito (Offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-bold" id="offcanvasCarritoLabel"><i class="bi bi-cart3 me-2"></i>Tu Carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column justify-content-between">
+    <div>
+      <div id="offcanvasCarritoVacio" class="text-center py-5 text-muted">
+        <i class="bi bi-cart-x display-4"></i>
+        <p class="mt-3">Tu carrito está vacío</p>
+      </div>
+      <div id="offcanvasListaItems" class="d-grid gap-3">
+        <!-- Aquí se inyectan los productos dinámicamente -->
+      </div>
+    </div>
+    <div class="border-top pt-3">
+      <div class="d-flex justify-content-between mb-3">
+        <span class="fw-bold">Total estimado:</span>
+        <strong class="h5 mb-0" id="offcanvasTotal">$0</strong>
+      </div>
+      <a href="carrito.html" class="btn btn-outline-primary w-100 mb-2">Ver carrito completo</a>
+      <a href="carrito.html" class="btn btn-primary w-100">Finalizar compra</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
